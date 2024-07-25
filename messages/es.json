@@ -1,0 +1,75 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "reserve": "Reservar Clase",
+    "login": "Ingresa",
+    "signup": "Crear Cuenta",
+    "profile": "Perfil",
+    "logout": "Cerrar Sesión"
+  },
+  "footer": {
+    "connect": {
+      "title": "Conéctate"
+    },
+    "links": {
+      "title": "Links",
+      "home": "Inicio",
+      "about": "Sobre Mí",
+      "reserve": "Reservar Clase"
+    },
+    "contact": {
+      "title": "Contacto"
+    },
+    "copyright": "Todos los derechos reservados"
+  },
+  "homePage": {
+    "metadata":{
+        "title":"Inicio",
+        "description" : "Página de inicio de SpanIA"
+    },
+    "title": "Inicio"
+  },
+  "aboutPage": {
+    "metadata":{
+        "title":"Sobre Mí",
+        "description" : "Página sobre mí de SpanIA"
+    },
+    "title": "Sobre Mí"
+  },
+  "reservePage": {
+    "metadata":{
+        "title":"Reservar Clase",
+        "description" : "Página para reservar clase de SpanIA"
+    },
+    "title": "Reservar Clase"
+  },
+  "loginPage": {
+    "metadata":{
+        "title":"Iniciar Sesión",
+        "description" : "Página para iniciar sesión de SpanIA"
+    },
+    "title": "Ingresa"
+  },
+  "signupPage": {
+    "metadata":{
+        "title":"Crear Cuenta",
+        "description" : "Página para crear cuenta de SpanIA"
+    },
+    "title": "Crear Cuenta"
+  },
+  "userPage": {
+    "metadata":{
+        "title":"Usuario",
+        "description" : "Página de usuario de SpanIA"
+    },
+    "title": "Usuario"
+  },
+  "adminPage": {
+    "metadata":{
+        "title":"Admin",
+        "description" : "Página de admin de SpanIA"
+    },
+    "title": "Admin"
+  }
+}

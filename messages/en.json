@@ -1,0 +1,75 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Me",
+    "reserve": "Reserve Class",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "profile": "Profile",
+    "logout": "Log Out"
+  },
+  "footer": {
+    "connect": {
+      "title": "Connect"
+    },
+    "links": {
+      "title": "Links",
+      "home": "Home",
+      "about": "About Me",
+      "reserve": "Reserve Class"
+    },
+    "contact": {
+        "title": "Contact"
+      },
+    "copyright": "All rights reserved"
+  },
+  "homePage": {
+    "metadata":{
+        "title":"Home",
+        "description" : "Home page of SpanIA"
+    },
+    "title": "Home"
+  },
+  "aboutPage": {
+    "metadata":{
+        "title":"About Me",
+        "description" : "About page of SpanIA"
+    },
+    "title": "About Me"
+  },
+  "reservePage": {
+    "metadata":{
+        "title":"Reserve Class",
+        "description" : "Reserve Class page of SpanIA"
+    },
+    "title": "Reserve Class"
+  },
+  "loginPage": {
+    "metadata":{
+        "title":"Log In",
+        "description" : "Log In page of SpanIA"
+    },
+    "title": "Log In"
+  },
+  "signupPage": {
+    "metadata":{
+        "title":"Sign Up",
+        "description" : "Sign Up page of SpanIA"
+    },
+    "title": "Sign Up"
+  },
+  "userPage": {
+    "metadata":{
+        "title":"User",
+        "description" : "User page of SpanIA"
+    },
+    "title": "User"
+  },
+  "adminPage": {
+    "metadata":{
+        "title":"Admin",
+        "description" : "Admin page of SpanIA"
+    },
+    "title": "Admin"
+  }
+}
