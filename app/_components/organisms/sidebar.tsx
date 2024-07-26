@@ -3,16 +3,18 @@ import logo from "@/public/logo.svg";
 import Image from "next/image";
 import close from "@/public/close.svg";
 import { useTranslations } from "next-intl";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import usePaths from "@/hooks/usePaths";
-import NavbarLink from "@/app/_components/ui/NavbarLink";
+import NavbarLink from "@/app/_components/atoms/NavbarLink";
 
-export const Sidebar = ({
-  isSidebarOpen,
-  setIsSidebarOpen,
-}: {
+interface SidebarProps {
   isSidebarOpen: boolean;
   setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Sidebar: FC<SidebarProps> = ({
+  isSidebarOpen,
+  setIsSidebarOpen,
 }) => {
   const { locale, path } = usePaths();
   const t = useTranslations("navbar");

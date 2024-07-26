@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/app/_components/navbar";
+import Navbar from "@/app/_components/organisms/navbar";
 import "@radix-ui/themes/styles.css";
 import { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { Footer } from "../_components/footer";
+import { Footer } from "../_components/organisms/footer";
 import { Messages } from "@/types";
 
 const poppins = Poppins({

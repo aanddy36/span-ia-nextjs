@@ -3,17 +3,17 @@ import logo from "@/public/logo.svg";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { FaBars } from "react-icons/fa";
-import { SelectLang } from "./ui/SelectLang";
-import { DropdownProfile } from "./ui/DropdownProfile";
-import { Dispatch, SetStateAction } from "react";
-import NavbarLink from "@/app/_components/ui/NavbarLink";
+import { SelectLang } from "../molecules/SelectLang";
+import { DropdownProfile } from "../molecules/DropdownProfile";
+import { Dispatch, FC, SetStateAction } from "react";
+import NavbarLink from "@/app/_components/atoms/NavbarLink";
 import usePaths from "@/hooks/usePaths";
 
-const Topbar = ({
-  setIsSidebarOpen,
-}: {
+interface TopbarProps {
   setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
-}) => {
+}
+
+const Topbar: FC<TopbarProps> = ({ setIsSidebarOpen }) => {
   const { locale } = usePaths();
   const isLoggedIn = false;
   const t = useTranslations("navbar");

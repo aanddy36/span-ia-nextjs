@@ -1,7 +1,7 @@
 "use client";
 
-import Topbar from "@/app/_components/topbar";
-import { Sidebar } from "@/app/_components/sidebar";
+import Topbar from "@/app/_components/organisms/topbar";
+import { Sidebar } from "@/app/_components/organisms/sidebar";
 import { useState } from "react";
 
 const Navbar = () => {

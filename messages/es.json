@@ -24,51 +24,82 @@
     "copyright": "Todos los derechos reservados"
   },
   "homePage": {
-    "metadata":{
-        "title":"Inicio",
-        "description" : "Página de inicio de SpanIA"
+    "metadata": {
+      "title": "Inicio",
+      "description": "Página de inicio de SpanIA"
     },
-    "title": "Inicio"
+    "welcome": {
+      "title": "bienvenido a mi sitio",
+      "header": "Aprende español conmigo",
+      "description": "Domina las habilidades escritas y habladas del idioma español con lecciones atractivas y resultados rápidos.",
+      "btn": "Empieza ahora",
+      "altBtn": "Imágen de Landing"
+    },
+    "services": {
+      "title": "Mis Servicios",
+      "header": "Características Ofrecidas",
+      "service1TitleAlt": "Ícono de Objetivo Privado",
+      "service1Title": "Objetivo Privado",
+      "service1Descr": "Las clases son solo para una persona, por lo que se personalizarán según tu nivel y progreso.",
+      "service2TitleAlt": "Ícono de Clases Económicas",
+      "service2Title": "Clases Económicas",
+      "service2Descr": "Aprovecha los precios económicos para nuestras lecciones.",
+      "service3TitleAlt": "Ícono de Método Moderno",
+      "service3Title": "Método Moderno",
+      "service3Descr": "Se te enseñará con los métodos de aprendizaje más avanzados y efectivos."
+    },
+    "whoAmI": {
+      "title": "¿Quién soy?",
+      "header": "¡Soy Javier y te quiero enseñar español!",
+      "description": "Descubre qué hace que mis lecciones sean tan efectivas.",
+      "btn": "Sobre Mí",
+      "altBtn": "Imágen de Landing"
+    },
+    "testimonial": {
+      "title": "Testimonios",
+      "header": "Qué Opinan Las Personas",
+      "classes":"clases"
+    }
   },
   "aboutPage": {
-    "metadata":{
-        "title":"Sobre Mí",
-        "description" : "Página sobre mí de SpanIA"
+    "metadata": {
+      "title": "Sobre Mí",
+      "description": "Página sobre mí de SpanIA"
     },
     "title": "Sobre Mí"
   },
   "reservePage": {
-    "metadata":{
-        "title":"Reservar Clase",
-        "description" : "Página para reservar clase de SpanIA"
+    "metadata": {
+      "title": "Reservar Clase",
+      "description": "Página para reservar clase de SpanIA"
     },
     "title": "Reservar Clase"
   },
   "loginPage": {
-    "metadata":{
-        "title":"Iniciar Sesión",
-        "description" : "Página para iniciar sesión de SpanIA"
+    "metadata": {
+      "title": "Iniciar Sesión",
+      "description": "Página para iniciar sesión de SpanIA"
     },
     "title": "Ingresa"
   },
   "signupPage": {
-    "metadata":{
-        "title":"Crear Cuenta",
-        "description" : "Página para crear cuenta de SpanIA"
+    "metadata": {
+      "title": "Crear Cuenta",
+      "description": "Página para crear cuenta de SpanIA"
     },
     "title": "Crear Cuenta"
   },
   "userPage": {
-    "metadata":{
-        "title":"Usuario",
-        "description" : "Página de usuario de SpanIA"
+    "metadata": {
+      "title": "Usuario",
+      "description": "Página de usuario de SpanIA"
     },
     "title": "Usuario"
   },
   "adminPage": {
-    "metadata":{
-        "title":"Admin",
-        "description" : "Página de admin de SpanIA"
+    "metadata": {
+      "title": "Admin",
+      "description": "Página de admin de SpanIA"
     },
     "title": "Admin"
   }

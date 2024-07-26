@@ -19,56 +19,87 @@
       "reserve": "Reserve Class"
     },
     "contact": {
-        "title": "Contact"
-      },
+      "title": "Contact"
+    },
     "copyright": "All rights reserved"
   },
   "homePage": {
-    "metadata":{
-        "title":"Home",
-        "description" : "Home page of SpanIA"
+    "metadata": {
+      "title": "Home",
+      "description": "Home page of SpanIA"
     },
-    "title": "Home"
+    "welcome": {
+      "title": "welcome to my site",
+      "header": "New Way To Learn Spanish",
+      "description": "Domain the written and spoken skills of the Spanish language with engaging lessons and fast resaults!",
+      "btn": "Start now",
+      "altBtn": "Lading Image"
+    },
+    "services": {
+      "title": "My Services",
+      "header": "Provided Features",
+      "service1TitleAlt": "Private Target icon",
+      "service1Title": "Private Target",
+      "service1Descr": "Classes are just for one person, so they will be personalized to your level and progress.",
+      "service2TitleAlt": "Economic Classes icon",
+      "service2Title": "Economic Classes",
+      "service2Descr": "Take advantage of the economic prices for our lessons.",
+      "service3TitleAlt": "Modern Method icon",
+      "service3Title": "Modern Method",
+      "service3Descr": "You will be taught with the most advanced and effective learning methods."
+    },
+    "whoAmI": {
+      "title": "Who Am I?",
+      "header": "Hi, I’m Javier, I’ll be teaching you Spanish",
+      "description": "Discover what makes my lessons so effective",
+      "btn": "About Me",
+      "altBtn": "Lading Image"
+    },
+    "testimonial": {
+      "title": "Testimonial",
+      "header": "What People Think",
+      "classes":"classes"
+    }
   },
   "aboutPage": {
-    "metadata":{
-        "title":"About Me",
-        "description" : "About page of SpanIA"
+    "metadata": {
+      "title": "About Me",
+      "description": "About page of SpanIA"
     },
     "title": "About Me"
   },
   "reservePage": {
-    "metadata":{
-        "title":"Reserve Class",
-        "description" : "Reserve Class page of SpanIA"
+    "metadata": {
+      "title": "Reserve Class",
+      "description": "Reserve Class page of SpanIA"
     },
     "title": "Reserve Class"
   },
   "loginPage": {
-    "metadata":{
-        "title":"Log In",
-        "description" : "Log In page of SpanIA"
+    "metadata": {
+      "title": "Log In",
+      "description": "Log In page of SpanIA"
     },
     "title": "Log In"
   },
   "signupPage": {
-    "metadata":{
-        "title":"Sign Up",
-        "description" : "Sign Up page of SpanIA"
+    "metadata": {
+      "title": "Sign Up",
+      "description": "Sign Up page of SpanIA"
     },
     "title": "Sign Up"
   },
   "userPage": {
-    "metadata":{
-        "title":"User",
-        "description" : "User page of SpanIA"
+    "metadata": {
+      "title": "User",
+      "description": "User page of SpanIA"
     },
     "title": "User"
   },
   "adminPage": {
-    "metadata":{
-        "title":"Admin",
-        "description" : "Admin page of SpanIA"
+    "metadata": {
+      "title": "Admin",
+      "description": "Admin page of SpanIA"
     },
     "title": "Admin"
   }

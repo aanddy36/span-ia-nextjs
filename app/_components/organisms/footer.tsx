@@ -1,14 +1,13 @@
 import { Messages } from "@/types";
 import Link from "next/link";
-import React from "react";
+import React, { FC } from "react";
 
-export const Footer = ({
-  messages,
-  locale,
-}: {
+interface FooterType {
   messages: Messages;
   locale: string;
-}) => {
+}
+
+export const Footer: FC<FooterType> = ({ messages, locale }) => {
   const {
     footer: { connect, links, copyright, contact },
   } = messages;
