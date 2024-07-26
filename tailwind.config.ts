@@ -34,6 +34,7 @@ const config = {
         hoverBlue: "#008080",
         reserved: "#CCCCCC",
         hoverGreen: "#85B754",
+        homeBg: "#F5F6F9",
         
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

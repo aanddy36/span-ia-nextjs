@@ -5,11 +5,15 @@ import { Sidebar } from "@/app/_components/sidebar";
 import { useState } from "react";
 
 const Navbar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <>
-      <Topbar setIsSidebarOpen={setIsSidebarOpen}/>
-      <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
+      <Topbar setIsSidebarOpen={setIsSidebarOpen} />
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
     </>
   );
 };

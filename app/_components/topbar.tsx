@@ -1,22 +1,21 @@
 import Link from "next/link";
 import logo from "@/public/logo.svg";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { getPathname } from "@/utils/getPathname";
 import { useTranslations } from "next-intl";
 import { FaBars } from "react-icons/fa";
-import { SelectLang } from "./ui/select-lang";
-import { DropdownProfile } from "./ui/dropdown-profile";
+import { SelectLang } from "./ui/SelectLang";
+import { DropdownProfile } from "./ui/DropdownProfile";
 import { Dispatch, SetStateAction } from "react";
+import NavbarLink from "@/app/_components/ui/NavbarLink";
+import usePaths from "@/hooks/usePaths";
 
 const Topbar = ({
   setIsSidebarOpen,
 }: {
   setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const fullPath = usePathname();
-  const [locale, path] = getPathname(fullPath);
-  const isLoggedIn = true;
+  const { locale } = usePaths();
+  const isLoggedIn = false;
   const t = useTranslations("navbar");
 
   return (
@@ -25,71 +24,33 @@ const Topbar = ({
         <Image src={logo} alt="Logo" />
       </Link>
       <ul className="miniFull:flex gap-6 full:gap-10 items-center text-[15px] hidden ">
-        <Link
-          href={`/${locale}`}
-          className={` border-b-2 py-[2px] ${
-            path === `/${locale}`
-              ? " border-red text-red"
-              : " border-transparent text-black  transition-colors duration-200 hover:text-red"
-          }`}
-        >
-          {t("home")}
-        </Link>
-        <Link
-          href={`/${locale}/about`}
-          className={` border-b-2 py-[2px] ${
-            path === "/about"
-              ? " border-red text-red"
-              : " border-transparent text-black  transition-colors duration-200 hover:text-red"
-          }`}
-        >
-          {t("about")}
-        </Link>
-        <Link
-          href={`/${locale}/reserve`}
-          className={` border-b-2 py-[2px] ${
-            path === "/reserve"
-              ? " border-red text-red"
-              : " border-transparent text-black  transition-colors duration-200 hover:text-red"
-          }`}
-        >
-          {t("reserve")}
-        </Link>
+        <NavbarLink linkPath="home" route="home" />
+        <NavbarLink linkPath="about" />
+        <NavbarLink linkPath="reserve" />
       </ul>
-      <ul className="miniFull:flex gap-4 full:gap-10 items-center text-[15px] hidden">
+      <ul className="flex gap-4 items-center">
         {!isLoggedIn ? (
-          <>
-            <Link
-              href={`/${locale}/login`}
-              className={` border-b-2 py-[2px] ${
-                path === "/login"
-                  ? " border-red text-red"
-                  : " border-transparent text-black  transition-colors duration-200 hover:text-red"
-              }`}
-            >
-              {t("login")}
-            </Link>
+          <div className="miniFull:flex gap-4 full:gap-10 items-center text-[15px] hidden">
+            <NavbarLink linkPath="login" />
             <Link
               className="px-4 py-2 text-white bg-red rounded-lg
-        transition-colors duration-200 hover:bg-hoverRed"
+              transition-colors duration-200 hover:bg-hoverRed"
               href={`/${locale}/signup`}
             >
               {t("signup")}
             </Link>
-          </>
+          </div>
         ) : (
           <DropdownProfile />
         )}
 
         <SelectLang />
-      </ul>
-      <button
-        className="border-none bg-transparent transition-transform duration-200 hover:rotate-90 scale-[1.2] miniFull:hidden 
+        <FaBars
+          className="border-none bg-transparent transition-transform duration-200 hover:rotate-90 scale-[1.2] miniFull:hidden 
         cursor-pointer"
-        onClick={() => setIsSidebarOpen((prev) => !prev)}
-      >
-        <FaBars />
-      </button>
+          onClick={() => setIsSidebarOpen((prev) => !prev)}
+        />
+      </ul>
     </nav>
   );
 };

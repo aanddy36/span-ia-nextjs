@@ -10,12 +10,10 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import settings from "@/public/setting.svg";
 import logout from "@/public/logout.svg";
-import { usePathname } from "next/navigation";
-import { getPathname } from "@/utils/getPathname";
+import usePaths from "@/hooks/usePaths";
 
 export const DropdownProfile = () => {
-  const fullPath = usePathname();
-  const [locale, _] = getPathname(fullPath);
+  const { locale } = usePaths();
   const t = useTranslations("navbar");
   return (
     <DropdownMenu>

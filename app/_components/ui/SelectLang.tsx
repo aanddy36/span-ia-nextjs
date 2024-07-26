@@ -1,5 +1,4 @@
-import { usePathname, useRouter } from "next/navigation";
-import { getPathname } from "@/utils/getPathname";
+import { useRouter } from "next/navigation";
 import { getFuturePath } from "@/utils/getFuturePath";
 import {
   Select,
@@ -11,11 +10,11 @@ import {
 import Image from "next/image";
 import es from "@/public/spain.svg";
 import en from "@/public/usa.svg";
+import usePaths from "@/hooks/usePaths";
 
 export const SelectLang = () => {
-  const fullPath = usePathname();
+  const { locale, fullPath } = usePaths();
   const router = useRouter();
-  const [locale, _] = getPathname(fullPath);
 
   const handleChange = (value: string) => {
     const futurePath = getFuturePath(fullPath, value);
