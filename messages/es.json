@@ -58,13 +58,28 @@
     "testimonial": {
       "title": "Testimonios",
       "header": "Qué Opinan Las Personas",
-      "classes":"clases"
+      "classes": "clases"
     }
   },
   "aboutPage": {
     "metadata": {
       "title": "Sobre Mí",
       "description": "Página sobre mí de SpanIA"
+    },
+    "javier": {
+      "title": "Soy Javier, un Profesor Apasionado",
+      "description": "¡Aprendizaje divertido, seguro y asombroso!",
+      "alt": "Foto de Javier"
+    },
+    "moreAbout": {
+      "title": "Más Sobre Mí",
+      "description": "Disfruto pasar tiempo con cosas simples como ir a una biblioteca y pasar el tiempo pasando páginas, pero también me parece emocionante deambular por las calles tratando de averiguar qué está pasando con la gente a mi alrededor.",
+      "alt": "Segunda foto de Javier"
+    },
+    "everyStudent": {
+      "title": "¡Cada nuevo estudiante es parte de una gran comunidad!",
+      "description": "Me encantaría formar una comunidad mucho más grande de amigos, mis estudiantes, para compartir y viajar por Colombia. ¡Podría mostrarte más sobre mi hermoso país y te ayudaré a planear tu próximo viaje a Colombia!",
+      "alt": "Tercera foto de Javier"
     },
     "title": "Sobre Mí"
   },
@@ -80,14 +95,33 @@
       "title": "Iniciar Sesión",
       "description": "Página para iniciar sesión de SpanIA"
     },
-    "title": "Ingresa"
+    "title": "Bienvenido a SpanIA",
+    "emailLabel": "Email",
+    "passwordLabel": "Contraseña",
+    "loginBtn": "Iniciar sesión",
+    "noAccount1": "¿No tienes cuenta?",
+    "noAccount2": "Regístrate",
+    "emailError": "El email es obligatorio",
+    "passwordError": "La contraseña es obligatoria"
   },
   "signupPage": {
     "metadata": {
       "title": "Crear Cuenta",
       "description": "Página para crear cuenta de SpanIA"
     },
-    "title": "Crear Cuenta"
+    "title": "Bienvenido a SpanIA",
+    "nameLabel":"Nombre",
+    "phoneLabel":"Teléfono",
+    "emailLabel": "Email",
+    "passwordLabel": "Contraseña",
+    "signupBtn": "Crear cuenta",
+    "alreadySignedUp1": "¿Ya eres un miembro?",
+    "alreadySignedUp2": "Inicia sesión",
+    "emailError": "El email es obligatorio",
+    "nameError": "El nombre es obligatorio",
+    "minPasswordError": "La contraseña debe tener mínimo 6 caracteres",
+    "maxPasswordError": "La contraseña debe tener máximo 16 caracteres",
+    "phoneError":"Número inválido. Debe tener 10 dígitos."
   },
   "userPage": {
     "metadata": {

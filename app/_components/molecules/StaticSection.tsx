@@ -5,6 +5,7 @@ import { ClassNameValue, twMerge } from "tailwind-merge";
 
 interface StaticSectionProps {
   children: ReactNode;
+  className?: ClassNameValue;
 }
 
 interface ImageProps {
@@ -13,10 +14,7 @@ interface ImageProps {
 }
 
 interface ContProps {
-  variant?: "left" | "center";
   children: ReactNode;
-  bg?: "gray" | "white";
-  py?: "none" | "sm";
   className?: ClassNameValue;
 }
 
@@ -30,6 +28,11 @@ interface BtnProps {
   children: ReactNode;
 }
 
+interface DescrProps {
+  className?: ClassNameValue;
+  children: ReactNode;
+}
+
 interface AtomProps {
   children: ReactNode;
 }
@@ -39,12 +42,17 @@ export const StaticSection: FC<StaticSectionProps> & {
   Cont: FC<ContProps>;
   Title: FC<AtomProps>;
   Header: FC<HeaderProps>;
-  Descr: FC<AtomProps>;
+  Descr: FC<DescrProps>;
   Btn: FC<BtnProps>;
-} = ({ children }) => {
+} = ({ children, className }) => {
   return (
     <section className="w-full py-12 px-8">
-      <div className="grid gap-10 grid-cols-1 laptop:grid-cols-2 max-w-[1128px] mx-auto">
+      <div
+        className={twMerge(
+          "grid gap-10 grid-cols-1 laptop:grid-cols-2 max-w-[1128px] mx-auto",
+          className
+        )}
+      >
         {children}
       </div>
     </section>
@@ -64,17 +72,11 @@ StaticSection.Image = ({ image, alt }) => {
   );
 };
 
-StaticSection.Cont = ({
-  variant = "left",
-  children,
-  bg = "white",
-  py = "none",
-  className,
-}) => {
+StaticSection.Cont = ({ children, className }) => {
   return (
     <div
       className={twMerge(
-        "flex flex-col gap-3 justify-center text-center bg-white w-full",
+        "flex flex-col gap-3 justify-center text-center w-full",
         className
       )}
     >
@@ -98,8 +100,10 @@ StaticSection.Header = ({ children, variant = "lg" }) => {
   return <h2 className={styles}>{children}</h2>;
 };
 
-StaticSection.Descr = ({ children }) => {
-  return <h4 className="text-[14px] font-light">{children}</h4>;
+StaticSection.Descr = ({ children, className }) => {
+  return (
+    <h4 className={twMerge("text-[14px] font-light", className)}>{children}</h4>
+  );
 };
 
 StaticSection.Btn = ({ children, path }) => {

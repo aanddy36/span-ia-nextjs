@@ -23,8 +23,8 @@ const SingleTestimony: FC<ReviewType & ExtraProps> = ({
             src={sex === "men" ? maleUser : femaleUser}
             alt="No photo male user"
           />
-          <div>
-            <h3 className=" font-semibold text-[16px]">{name}</h3>
+          <div className=" text-left">
+            <h5 className=" font-semibold text-[16px]">{name}</h5>
             <span className=" font-light text-[13px]">
               {classes} {message}
             </span>

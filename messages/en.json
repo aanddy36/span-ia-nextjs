@@ -58,13 +58,28 @@
     "testimonial": {
       "title": "Testimonial",
       "header": "What People Think",
-      "classes":"classes"
+      "classes": "classes"
     }
   },
   "aboutPage": {
     "metadata": {
       "title": "About Me",
       "description": "About page of SpanIA"
+    },
+    "javier": {
+      "title": "I'm Javier, A Passionate Teacher",
+      "description": "Fun, secure and awesome learning!",
+      "alt": "Javier photo"
+    },
+    "moreAbout": {
+      "title": "More About Myself",
+      "description": " I enjoy spending time with simple things like going to a library and pass the time turning pages, but also I find it exciting just to be wandering on the streets trying to figure out what is going on with the people around me.",
+      "alt": "Second Javier photo"
+    },
+    "everyStudent": {
+      "title": " Every new student is part of a great community!",
+      "description": "I would love to make a much bigger community of friends, my students, to share and travel around Colombia. I could show you more about my beautiful country and I will help you plan your next trip to Colombia!",
+      "alt": "Third Javier photo"
     },
     "title": "About Me"
   },
@@ -80,14 +95,33 @@
       "title": "Log In",
       "description": "Log In page of SpanIA"
     },
-    "title": "Log In"
+    "title": "Welcome to SpanIA",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "loginBtn": "Log in",
+    "noAccount1": "Don’t have an account?",
+    "noAccount2": "Sign up",
+    "emailError": "Email is required",
+    "passwordError": "Password is required"
   },
   "signupPage": {
     "metadata": {
       "title": "Sign Up",
       "description": "Sign Up page of SpanIA"
     },
-    "title": "Sign Up"
+    "title": "Welcome to SpanIA",
+    "nameLabel":"Name",
+    "phoneLabel":"Phone",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "signupBtn": "Sign up",
+    "alreadySignedUp1": "Already a member?",
+    "alreadySignedUp2": "Log In",
+    "emailError": "Email is required",
+    "nameError": "Name is required",
+    "minPasswordError": "Password must have at least 6 characters",
+    "maxPasswordError": "Password must have maxium 16 characters",
+    "phoneError":"Invalid phone number. It should be 10 digits long."
   },
   "userPage": {
     "metadata": {

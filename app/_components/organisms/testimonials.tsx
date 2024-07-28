@@ -1,6 +1,3 @@
-import maleUser from "@/public/maleUser.svg";
-import femaleUser from "@/public/femaleUser.svg";
-import Image from "next/image";
 import { FC } from "react";
 import {
   SectionContainer,
