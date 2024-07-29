@@ -15,7 +15,7 @@ interface TopbarProps {
 
 const Topbar: FC<TopbarProps> = ({ setIsSidebarOpen }) => {
   const { locale } = usePaths();
-  const isLoggedIn = false;
+  const isLoggedIn = true;
   const t = useTranslations("navbar");
 
   return (

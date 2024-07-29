@@ -110,8 +110,8 @@
       "description": "Página para crear cuenta de SpanIA"
     },
     "title": "Bienvenido a SpanIA",
-    "nameLabel":"Nombre",
-    "phoneLabel":"Teléfono",
+    "nameLabel": "Nombre",
+    "phoneLabel": "Teléfono",
     "emailLabel": "Email",
     "passwordLabel": "Contraseña",
     "signupBtn": "Crear cuenta",
@@ -121,7 +121,7 @@
     "nameError": "El nombre es obligatorio",
     "minPasswordError": "La contraseña debe tener mínimo 6 caracteres",
     "maxPasswordError": "La contraseña debe tener máximo 16 caracteres",
-    "phoneError":"Número inválido. Debe tener 10 dígitos."
+    "phoneError": "Número inválido. Debe tener 10 dígitos."
   },
   "userPage": {
     "metadata": {
@@ -136,5 +136,13 @@
       "description": "Página de admin de SpanIA"
     },
     "title": "Admin"
+  },
+  "actions": {
+    "signup": {
+      "invalidFields": "Campos inválidos",
+      "foundEmail": "Este correo electrónico ya está registrado",
+      "unknown": "Hubo un error al registrarse",
+      "userCreated": "¡Usuario creado con éxito!"
+    }
   }
 }

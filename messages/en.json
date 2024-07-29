@@ -110,8 +110,8 @@
       "description": "Sign Up page of SpanIA"
     },
     "title": "Welcome to SpanIA",
-    "nameLabel":"Name",
-    "phoneLabel":"Phone",
+    "nameLabel": "Name",
+    "phoneLabel": "Phone",
     "emailLabel": "Email",
     "passwordLabel": "Password",
     "signupBtn": "Sign up",
@@ -121,7 +121,7 @@
     "nameError": "Name is required",
     "minPasswordError": "Password must have at least 6 characters",
     "maxPasswordError": "Password must have maxium 16 characters",
-    "phoneError":"Invalid phone number. It should be 10 digits long."
+    "phoneError": "Invalid phone number. It should be 10 digits long."
   },
   "userPage": {
     "metadata": {
@@ -136,5 +136,13 @@
       "description": "Admin page of SpanIA"
     },
     "title": "Admin"
+  },
+  "actions": {
+    "signup": {
+      "invalidFields": "Invalid fields",
+      "foundEmail": "This email is already registered",
+      "unknown": "There was an error while signing up",
+      "userCreated": "User created successfully!"
+    }
   }
 }
