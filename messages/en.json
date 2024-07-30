@@ -102,7 +102,8 @@
     "noAccount1": "Don’t have an account?",
     "noAccount2": "Sign up",
     "emailError": "Email is required",
-    "passwordError": "Password is required"
+    "passwordError": "Password is required",
+    "unexpectedError":"There was an error sending the info"
   },
   "signupPage": {
     "metadata": {
@@ -121,7 +122,8 @@
     "nameError": "Name is required",
     "minPasswordError": "Password must have at least 6 characters",
     "maxPasswordError": "Password must have maxium 16 characters",
-    "phoneError": "Invalid phone number. It should be 10 digits long."
+    "phoneError": "Invalid phone number. It should be 10 digits long.",
+    "unexpectedError":"There was an error sending the info"
   },
   "userPage": {
     "metadata": {
@@ -143,6 +145,12 @@
       "foundEmail": "This email is already registered",
       "unknown": "There was an error while signing up",
       "userCreated": "User created successfully!"
+    },
+    "login": {
+      "invalidFields": "Invalid fields",
+      "success": "Login successful!",
+      "credentialsError": "Invalid credentials",
+      "unknown": "Something went wrong"
     }
   }
 }

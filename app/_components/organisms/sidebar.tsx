@@ -6,6 +6,8 @@ import { useTranslations } from "next-intl";
 import { Dispatch, FC, SetStateAction } from "react";
 import usePaths from "@/hooks/usePaths";
 import NavbarLink from "@/app/_components/atoms/NavbarLink";
+import { useSession } from "@/contexts/SessionContext";
+import { signOut } from "next-auth/react";
 
 interface SidebarProps {
   isSidebarOpen: boolean;
@@ -16,9 +18,9 @@ export const Sidebar: FC<SidebarProps> = ({
   isSidebarOpen,
   setIsSidebarOpen,
 }) => {
-  const { locale, path } = usePaths();
+  const { locale } = usePaths();
   const t = useTranslations("navbar");
-  const isLoggedIn = true;
+  const { isLoggedIn } = useSession();
 
   return (
     <nav
@@ -79,7 +81,10 @@ export const Sidebar: FC<SidebarProps> = ({
             />
             <button
               className="border-transparent text-black  transition-all duration-200 hover:px-8 px-4 py-3 text-left"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={() => {
+                signOut()
+                setIsSidebarOpen(false);
+              }}
             >
               {t("logout")}
             </button>

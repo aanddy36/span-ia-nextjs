@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Topbar setIsSidebarOpen={setIsSidebarOpen} />
+      <Topbar setIsSidebarOpen={setIsSidebarOpen}/>
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}

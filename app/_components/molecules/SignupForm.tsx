@@ -4,13 +4,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Input from "../atoms/Input";
 import { Button } from "@/app/_components/shadcn/button";
-import { FC, useState, useTransition } from "react";
+import { FC, useEffect, useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
 import { SignupSchemaType, useSignupSchema } from "@/schemas/signup";
 import FormError from "@/app/_components/molecules/FormError";
 import FormSuccess from "@/app/_components/molecules/FormSuccess";
 import { signup } from "@/actions/signup";
 import { ClipLoader } from "react-spinners";
+import { useRouter } from "next/navigation";
 
 interface SignupFormProps {
   locale: string;
@@ -20,12 +21,14 @@ export const SignupForm: FC<SignupFormProps> = ({ locale }) => {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
+  const router = useRouter();
   const t = useTranslations("signupPage");
   const SignupSchema = useSignupSchema();
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<SignupSchemaType>({
     resolver: zodResolver(SignupSchema),
     defaultValues: {
@@ -34,7 +37,14 @@ export const SignupForm: FC<SignupFormProps> = ({ locale }) => {
     },
   });
 
-  const signupWithLocale = signup.bind(null, locale)
+  useEffect(() => {
+    if (success) {
+      reset();
+      /* router.push(`/${locale}/profile/user`); */
+    }
+  }, [success]);
+
+  const signupWithLocale = signup.bind(null, locale);
 
   const onSubmit = async (data: SignupSchemaType) => {
     setError("");
@@ -46,7 +56,7 @@ export const SignupForm: FC<SignupFormProps> = ({ locale }) => {
         setSuccess(success);
       });
     } catch (error) {
-      setError("There was an error sending the info");
+      setError(t("unexpectedError"));
     }
   };
   return (

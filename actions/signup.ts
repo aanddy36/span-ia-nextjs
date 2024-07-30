@@ -1,11 +1,14 @@
 "use server";
 
+import { signIn } from "@/lib/auth";
 import db from "@/lib/db";
 import { SignupSchema, SignupSchemaType } from "@/schemas/signup";
-import { Messages } from "@/types";
+import { Messages } from "@/types/modals";
+
 import { getUserByEmail } from "@/utils/getUserBy";
 import bcrypt from "bcryptjs";
 import { getMessages } from "next-intl/server";
+import { revalidatePath } from "next/cache";
 
 export const signup = async (locale: string, formData: SignupSchemaType) => {
   const {
@@ -14,7 +17,7 @@ export const signup = async (locale: string, formData: SignupSchemaType) => {
   const { invalidFields, unknown, userCreated } = signup;
 
   const validatedFields = SignupSchema.safeParse(formData);
-  
+
   if (!validatedFields.success) {
     return { error: invalidFields, success: "" };
   }
@@ -27,7 +30,7 @@ export const signup = async (locale: string, formData: SignupSchemaType) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    await db.user.create({
+    const user = await db.user.create({
       data: {
         name,
         email,
@@ -35,6 +38,13 @@ export const signup = async (locale: string, formData: SignupSchemaType) => {
         password: hashedPassword,
       },
     });
+
+    /* await signIn("credentials", {
+      email: user.email,
+      password,
+      redirect: false,
+      redirectTo: `/${locale}/profile/user`,
+    }); */
     return { error: "", success: userCreated };
   } catch (error) {
     console.log(error);

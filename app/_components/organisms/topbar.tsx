@@ -8,6 +8,7 @@ import { DropdownProfile } from "../molecules/DropdownProfile";
 import { Dispatch, FC, SetStateAction } from "react";
 import NavbarLink from "@/app/_components/atoms/NavbarLink";
 import usePaths from "@/hooks/usePaths";
+import { useSession } from "@/contexts/SessionContext";
 
 interface TopbarProps {
   setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
@@ -15,7 +16,8 @@ interface TopbarProps {
 
 const Topbar: FC<TopbarProps> = ({ setIsSidebarOpen }) => {
   const { locale } = usePaths();
-  const isLoggedIn = true;
+  const { isLoggedIn } = useSession();
+
   const t = useTranslations("navbar");
 
   return (

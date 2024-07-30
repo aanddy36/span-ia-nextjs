@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/_components/organisms/navbar";
@@ -7,7 +6,10 @@ import { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Footer } from "../_components/organisms/footer";
-import { Messages } from "@/types";
+
+import { auth } from "@/lib/auth";
+import { SessionProvider } from "@/contexts/SessionContext";
+import { Messages } from "@/global";
 
 const poppins = Poppins({
   weight: ["200", "400", "600", "800"],
@@ -43,16 +45,21 @@ export default async function RootLayout({
   params: { locale: string };
 }) {
   const messages = (await getMessages({ locale })) as Messages;
-  console.log();
+  const session = await auth();
+/*   console.log("Session:");
+
+  console.log(session); */
 
   return (
     <body className={poppins.className}>
       <NextIntlClientProvider messages={messages}>
-        <main className="min-h-screen flex flex-col ">
-          <Navbar />
-          <div className="grow w-full">{children}</div>
-          <Footer messages={messages} locale={locale} />
-        </main>
+        <SessionProvider authSession={session}>
+          <main className="min-h-screen flex flex-col ">
+            <Navbar/>
+            <div className="grow w-full">{children}</div>
+            <Footer messages={messages} locale={locale} />
+          </main>
+        </SessionProvider>
       </NextIntlClientProvider>
     </body>
   );

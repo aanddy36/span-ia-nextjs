@@ -1,6 +1,6 @@
 import { LoginForm } from "@/app/_components/molecules/LoginForm";
 import Socials from "@/app/_components/molecules/Socials";
-import { Messages } from "@/types";
+import { Messages } from "@/global";
 import { getMessages } from "next-intl/server";
 import Link from "next/link";
 

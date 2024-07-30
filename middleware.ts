@@ -1,12 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import createIntlMiddleware from "next-intl/middleware";
 import NextAuth from "next-auth";
-import authConfig from "./auth.config";
-import { getPathname } from "./utils/getPathname";
-import { isProtectedRoute } from "./utils/isProtectedRoute";
-
-// Definir rutas que requieren autenticación
-const authPaths = ["/en/profile", "/es/profile"];
+import authConfig from "@/auth.config";
+import { getPathname } from "@/utils/getPathname";
+import { isProtectedRoute } from "@/utils/isProtectedRoute";
+import { isAuthRoute } from "./utils/isAuthRoute";
 
 // Configuración de next-intl
 const intlMiddleware = createIntlMiddleware({
@@ -22,11 +20,18 @@ export default auth((req) => {
   const [locale, path] = getPathname(nextUrl.pathname);
   const isLoggedIn = !!req.auth;
   const isProtected = isProtectedRoute(nextUrl.pathname);
-  console.log(isProtected);
+  const isAuth = isAuthRoute(nextUrl.pathname);
 
-  // Primero manejamos la autenticación
+  //AUTENTICACION
+
+  // Si el usuario no esta autenticado y quiere entrar a una ruta protegida
   if (!isLoggedIn && isProtected) {
     return Response.redirect(new URL(`/${locale}/login`, nextUrl));
+  }
+
+  // Si el usuario esta autenticado y quiere entrar a una ruta auth (/login o /signup)
+  if (isLoggedIn && isAuth) {
+    return Response.redirect(new URL(`/${locale}`, nextUrl));
   }
 
   // Si la ruta no requiere autenticación, manejamos solo la internacionalización

@@ -9,12 +9,18 @@ import thePhoto from "@/public/no-photo.jpg";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import settings from "@/public/setting.svg";
-import logout from "@/public/logout.svg";
+import logoutLogo from "@/public/logout.svg";
 import usePaths from "@/hooks/usePaths";
+import { signOut } from "next-auth/react";
+import { useSession } from "@/contexts/SessionContext";
+import { getAdminOrUser } from "@/utils/getAdminOrUser";
 
 export const DropdownProfile = () => {
   const { locale } = usePaths();
   const t = useTranslations("navbar");
+  const { session } = useSession();
+  const path = getAdminOrUser(session?.user.role);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="outline-none rounded-full">
@@ -25,14 +31,17 @@ export const DropdownProfile = () => {
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <Link href={`/${locale}/profile`}>
+        <Link href={`/${locale}/profile/${path}`}>
           <DropdownMenuItem className=" cursor-pointer space-x-3">
             <Image src={settings} alt="Settings logo" />
             <span>{t("profile")}</span>
           </DropdownMenuItem>
         </Link>
-        <DropdownMenuItem className=" cursor-pointer space-x-3">
-          <Image src={logout} alt="Logout logo" />
+        <DropdownMenuItem
+          className=" cursor-pointer space-x-3"
+          onClick={() => signOut()}
+        >
+          <Image src={logoutLogo} alt="Logout logo" />
           <span>{t("logout")}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

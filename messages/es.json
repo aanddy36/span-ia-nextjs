@@ -102,7 +102,8 @@
     "noAccount1": "¿No tienes cuenta?",
     "noAccount2": "Regístrate",
     "emailError": "El email es obligatorio",
-    "passwordError": "La contraseña es obligatoria"
+    "passwordError": "La contraseña es obligatoria",
+    "unexpectedError":"Hubo un error enviando la información"
   },
   "signupPage": {
     "metadata": {
@@ -121,7 +122,8 @@
     "nameError": "El nombre es obligatorio",
     "minPasswordError": "La contraseña debe tener mínimo 6 caracteres",
     "maxPasswordError": "La contraseña debe tener máximo 16 caracteres",
-    "phoneError": "Número inválido. Debe tener 10 dígitos."
+    "phoneError": "Número inválido. Debe tener 10 dígitos.",
+    "unexpectedError":"Hubo un error enviando la información"
   },
   "userPage": {
     "metadata": {
@@ -143,6 +145,12 @@
       "foundEmail": "Este correo electrónico ya está registrado",
       "unknown": "Hubo un error al registrarse",
       "userCreated": "¡Usuario creado con éxito!"
+    },
+    "login": {
+      "invalidFields": "Campos inválidos",
+      "success": "¡Inicio de sesión exitoso!",
+      "credentialsError": "Credenciales inválidas",
+      "unknown": "Ocurrió algo mal"
     }
   }
 }
