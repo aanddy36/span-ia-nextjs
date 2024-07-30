@@ -4,7 +4,7 @@ import {
   SectionTitle,
 } from "@/app/_components/molecules/StaticSection";
 import SingleService from "../molecules/SingleService";
-import { Messages, ServiceType } from "@/types";
+import { Messages, ServiceType } from "@/types/modals";
 import target from "@/public/target.svg";
 import money from "@/public/dollar.svg";
 import books from "@/public/books.svg";

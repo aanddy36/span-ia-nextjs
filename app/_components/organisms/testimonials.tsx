@@ -4,7 +4,7 @@ import {
   SectionHeader,
   SectionTitle,
 } from "@/app/_components/molecules/StaticSection";
-import { Messages, ReviewType } from "@/types";
+import { Messages, ReviewType } from "@/types/modals";
 import SingleTestimony from "../molecules/SingleTestimony";
 import { getMessages } from "next-intl/server";
 

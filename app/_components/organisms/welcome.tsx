@@ -8,7 +8,7 @@ import {
   StaticSection,
 } from "@/app/_components/molecules/StaticSection";
 import landing1 from "@/public/landing_1.png";
-import { Messages } from "@/types";
+import { Messages } from "@/types/modals";
 import { getMessages } from "next-intl/server";
 import { FC } from "react";
 

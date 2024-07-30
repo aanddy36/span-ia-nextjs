@@ -1,6 +1,7 @@
-import { ServiceType } from "@/types";
+
 import React, { FC } from "react";
 import Image from "next/image";
+import { ServiceType } from "@/types/modals";
 
 const SingleService: FC<ServiceType> = ({ src, alt, title, description }) => {
   return (

@@ -1,8 +1,9 @@
-import { ReviewType } from "@/types";
+
 import React, { FC } from "react";
 import Image from "next/image";
 import maleUser from "@/public/maleUser.svg";
 import femaleUser from "@/public/femaleUser.svg";
+import { ReviewType } from "@/types/modals";
 
 interface ExtraProps {
   message: string;
@@ -31,7 +32,7 @@ const SingleTestimony: FC<ReviewType & ExtraProps> = ({
           </div>
         </div>
         <span className=" text-red text-[128px] font-special leading-none h-[12px]">
-          "
+          &quot;
         </span>
       </div>
       <span className=" text-[14px] font-light max-w-[336px] text-justify">

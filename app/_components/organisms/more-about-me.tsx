@@ -9,7 +9,7 @@ import {
 
 import javier2 from "@/public/javier2.png";
 import { getMessages } from "next-intl/server";
-import { Messages } from "@/types";
+import { Messages } from "@/types/modals";
 
 interface MoreAboutMeProps {
   locale: string;

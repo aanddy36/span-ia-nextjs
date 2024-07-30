@@ -1,4 +1,4 @@
-import { Messages } from "@/types";
+import { Messages } from "@/types/modals";
 import Link from "next/link";
 import React, { FC } from "react";
 

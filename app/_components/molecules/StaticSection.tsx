@@ -72,6 +72,8 @@ StaticSection.Image = ({ image, alt }) => {
   );
 };
 
+StaticSection.Image.displayName = "StaticSection.Image";
+
 StaticSection.Cont = ({ children, className }) => {
   return (
     <div
@@ -85,11 +87,15 @@ StaticSection.Cont = ({ children, className }) => {
   );
 };
 
+StaticSection.Cont.displayName = "StaticSection.Cont";
+
 StaticSection.Title = ({ children }) => {
   return (
     <h4 className="font-medium text-red text-lg capitalize">{children}</h4>
   );
 };
+
+StaticSection.Title.displayName = "StaticSection.Title";
 
 StaticSection.Header = ({ children, variant = "lg" }) => {
   const styles =
@@ -100,11 +106,15 @@ StaticSection.Header = ({ children, variant = "lg" }) => {
   return <h2 className={styles}>{children}</h2>;
 };
 
+StaticSection.Header.displayName = "StaticSection.Header";
+
 StaticSection.Descr = ({ children, className }) => {
   return (
     <h4 className={twMerge("text-[14px] font-light", className)}>{children}</h4>
   );
 };
+
+StaticSection.Descr.displayName = "StaticSection.Descr";
 
 StaticSection.Btn = ({ children, path }) => {
   return (
@@ -117,6 +127,8 @@ StaticSection.Btn = ({ children, path }) => {
     </Link>
   );
 };
+
+StaticSection.Btn.displayName = "StaticSection.Btn";
 
 export const SectionImg = StaticSection.Image;
 export const SectionContainer = StaticSection.Cont;

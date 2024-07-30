@@ -1,4 +1,4 @@
-import { Messages } from "@/types";
+import { Messages } from "@/types/modals";
 import { getMessages } from "next-intl/server";
 
 export async function generateMetadata({

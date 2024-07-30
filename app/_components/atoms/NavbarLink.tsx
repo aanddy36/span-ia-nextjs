@@ -1,5 +1,5 @@
 import usePaths from "@/hooks/usePaths";
-import { NavbarMessages } from "@/types";
+import { NavbarMessages } from "@/types/modals";
 import { useTranslations } from "next-intl";
 import Link, { LinkProps } from "next/link";
 
