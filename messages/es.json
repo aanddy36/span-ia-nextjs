@@ -141,7 +141,7 @@
     "title": "Admin"
   },
   "notFoundPage": {
-    "metadata":{
+    "metadata": {
       "title": "Error",
       "description": "Página de error de SpanIA"
     },
@@ -149,6 +149,16 @@
     "header": "¡Oops! Algo salió mal",
     "descr": "Parece que llegaste a un enlace roto",
     "btn": "Volver a inicio"
+  },
+  "notAllowedPage": {
+    "metadata": {
+      "title": "No autorizado",
+      "description": "Página no autorizada de SpanIA"
+    },
+    "title": "Error 401",
+    "header": "No autorizado",
+    "descr": "¡No tienes permiso para acceder a esta página!",
+    "btn": "Volver"
   },
   "actions": {
     "signup": {

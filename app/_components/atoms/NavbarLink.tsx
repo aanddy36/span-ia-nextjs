@@ -1,5 +1,7 @@
+import { useSession } from "@/contexts/SessionContext";
 import usePaths from "@/hooks/usePaths";
 import { NavbarMessages } from "@/types/modals";
+import { getAdminOrUser } from "@/utils/getAdminOrUser";
 import { useTranslations } from "next-intl";
 import Link, { LinkProps } from "next/link";
 
@@ -18,7 +20,13 @@ const NavbarLink = ({
   const { locale, path } = usePaths();
   const t = useTranslations("navbar");
 
-  const href = route === "other" ? `/${locale}/${linkPath}` : `/${locale}`;
+  const { session } = useSession();
+  const subRoute = getAdminOrUser(session?.user.role);
+
+  let href = route === "other" ? `/${locale}/${linkPath}` : `/${locale}`;
+  if (linkPath === "profile") {
+    href += `/${subRoute}`;
+  }
   const classPath = route === "other" ? `/${linkPath}` : `/${locale}`;
 
   const topbarStyles = `border-b-2 py-[2px] ${

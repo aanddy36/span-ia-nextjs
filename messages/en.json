@@ -141,7 +141,7 @@
     "title": "Admin"
   },
   "notFoundPage": {
-    "metadata":{
+    "metadata": {
       "title": "Error",
       "description": "Error page of SpanIA"
     },
@@ -149,6 +149,16 @@
     "header": "Oops! Something went wrong",
     "descr": "It seems like you got to a broken link",
     "btn": "Go back home"
+  },
+  "notAllowedPage": {
+    "metadata": {
+      "title": "Unauthorized",
+      "description": "Unauthorized page of SpanIA"
+    },
+    "title": "Error 401",
+    "header": "Unauthorized",
+    "descr": "You are not allowed to enter this page!",
+    "btn": "Go back"
   },
   "actions": {
     "signup": {

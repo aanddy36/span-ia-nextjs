@@ -43,7 +43,9 @@ const Topbar: FC<TopbarProps> = ({ setIsSidebarOpen }) => {
             </Link>
           </div>
         ) : (
-          <DropdownProfile />
+          <div className="miniFull:block hidden">
+            <DropdownProfile />
+          </div>
         )}
 
         <SelectLang />

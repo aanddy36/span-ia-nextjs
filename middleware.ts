@@ -15,7 +15,7 @@ const intlMiddleware = createIntlMiddleware({
 // Configuración de authJs con Prisma
 const { auth } = NextAuth(authConfig);
 
-export default auth((req) => {
+export default auth(async (req) => {
   const { nextUrl } = req;
   const [locale, path] = getPathname(nextUrl.pathname);
   const isLoggedIn = !!req.auth;
@@ -26,12 +26,12 @@ export default auth((req) => {
 
   // Si el usuario no esta autenticado y quiere entrar a una ruta protegida
   if (!isLoggedIn && isProtected) {
-    return Response.redirect(new URL(`/${locale}/login`, nextUrl));
+    return Response.redirect(new URL("/login", nextUrl));
   }
 
   // Si el usuario esta autenticado y quiere entrar a una ruta auth (/login o /signup)
   if (isLoggedIn && isAuth) {
-    return Response.redirect(new URL(`/${locale}`, nextUrl));
+    return Response.redirect(new URL("/", nextUrl));
   }
 
   // Si la ruta no requiere autenticación, manejamos solo la internacionalización
@@ -46,5 +46,5 @@ export default auth((req) => {
 
 // Configuración de los patrones de coincidencia
 export const config = {
-  matcher: ["/","/not-found","/login", "/(es|en)/:path*"],
+  matcher: ["/", "/not-found", "/not-allowed", "/login", "/(es|en)/:path*"],
 };
