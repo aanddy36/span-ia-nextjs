@@ -46,5 +46,5 @@ export default auth((req) => {
 
 // Configuración de los patrones de coincidencia
 export const config = {
-  matcher: ["/","/login", "/(es|en)/:path*"],
+  matcher: ["/","/not-found","/login", "/(es|en)/:path*"],
 };

@@ -103,8 +103,8 @@
     "noAccount2": "Sign up",
     "emailError": "Email is required",
     "passwordError": "Password is required",
-    "unexpectedError":"There was an error sending the info",
-    "sameProviderError":"Email already in use with differente provider!"
+    "unexpectedError": "There was an error sending the info",
+    "sameProviderError": "Email already in use with differente provider!"
   },
   "signupPage": {
     "metadata": {
@@ -124,7 +124,7 @@
     "minPasswordError": "Password must have at least 6 characters",
     "maxPasswordError": "Password must have maxium 16 characters",
     "phoneError": "Invalid phone number. It should be 10 digits long.",
-    "unexpectedError":"There was an error sending the info"
+    "unexpectedError": "There was an error sending the info"
   },
   "userPage": {
     "metadata": {
@@ -139,6 +139,16 @@
       "description": "Admin page of SpanIA"
     },
     "title": "Admin"
+  },
+  "notFoundPage": {
+    "metadata":{
+      "title": "Error",
+      "description": "Error page of SpanIA"
+    },
+    "title": "Error 404",
+    "header": "Oops! Something went wrong",
+    "descr": "It seems like you got to a broken link",
+    "btn": "Go back home"
   },
   "actions": {
     "signup": {

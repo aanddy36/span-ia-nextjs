@@ -103,8 +103,8 @@
     "noAccount2": "Regístrate",
     "emailError": "El email es obligatorio",
     "passwordError": "La contraseña es obligatoria",
-    "unexpectedError":"Hubo un error enviando la información",
-    "sameProviderError":"¡El correo electrónico ya está en uso con un proveedor diferente!"
+    "unexpectedError": "Hubo un error enviando la información",
+    "sameProviderError": "¡El correo electrónico ya está en uso con un proveedor diferente!"
   },
   "signupPage": {
     "metadata": {
@@ -124,7 +124,7 @@
     "minPasswordError": "La contraseña debe tener mínimo 6 caracteres",
     "maxPasswordError": "La contraseña debe tener máximo 16 caracteres",
     "phoneError": "Número inválido. Debe tener 10 dígitos.",
-    "unexpectedError":"Hubo un error enviando la información"
+    "unexpectedError": "Hubo un error enviando la información"
   },
   "userPage": {
     "metadata": {
@@ -139,6 +139,16 @@
       "description": "Página de admin de SpanIA"
     },
     "title": "Admin"
+  },
+  "notFoundPage": {
+    "metadata":{
+      "title": "Error",
+      "description": "Página de error de SpanIA"
+    },
+    "title": "Error 404",
+    "header": "¡Oops! Algo salió mal",
+    "descr": "Parece que llegaste a un enlace roto",
+    "btn": "Volver a inicio"
   },
   "actions": {
     "signup": {
