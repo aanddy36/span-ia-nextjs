@@ -103,7 +103,8 @@
     "noAccount2": "Regístrate",
     "emailError": "El email es obligatorio",
     "passwordError": "La contraseña es obligatoria",
-    "unexpectedError":"Hubo un error enviando la información"
+    "unexpectedError":"Hubo un error enviando la información",
+    "sameProviderError":"¡El correo electrónico ya está en uso con un proveedor diferente!"
   },
   "signupPage": {
     "metadata": {

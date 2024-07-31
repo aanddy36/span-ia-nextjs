@@ -1,9 +1,10 @@
 
+import Error from "@/app/_components/organisms/error";
+
 export default function LocaleNotFound() {
-  
   return (
-    <body>
-      <h1>Page Not Found (Locale)</h1>
+    <body className=" pt-20 flex flex-col items-center">
+      <Error />
     </body>
   );
 }

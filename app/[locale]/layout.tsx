@@ -1,5 +1,4 @@
 import { Poppins } from "next/font/google";
-import "./globals.css";
 import Navbar from "@/app/_components/organisms/navbar";
 import "@radix-ui/themes/styles.css";
 import { ReactNode } from "react";

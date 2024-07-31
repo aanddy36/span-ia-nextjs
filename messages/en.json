@@ -103,7 +103,8 @@
     "noAccount2": "Sign up",
     "emailError": "Email is required",
     "passwordError": "Password is required",
-    "unexpectedError":"There was an error sending the info"
+    "unexpectedError":"There was an error sending the info",
+    "sameProviderError":"Email already in use with differente provider!"
   },
   "signupPage": {
     "metadata": {

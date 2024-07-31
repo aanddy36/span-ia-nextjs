@@ -10,6 +10,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   ...authConfig,
   pages: {
     signIn: "/login",
+    error: "/[locale]/error",
   },
   callbacks: {
     async jwt({ token }) {

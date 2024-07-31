@@ -11,6 +11,7 @@ import FormError from "@/app/_components/molecules/FormError";
 import FormSuccess from "@/app/_components/molecules/FormSuccess";
 import { login } from "@/actions/login";
 import { ClipLoader } from "react-spinners";
+import { useSearchParams } from "next/navigation";
 
 interface LoginFormProps {
   locale: string;
@@ -20,7 +21,12 @@ export const LoginForm: FC<LoginFormProps> = ({ locale }) => {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
+  const searchParams = useSearchParams();
   const t = useTranslations("loginPage");
+  const urlError =
+    searchParams.get("error") === "OAuthAccountNotLinked"
+      ? t("sameProviderError")
+      : "";
   const LoginSchema = useLoginSchema();
   const {
     register,
@@ -55,7 +61,7 @@ export const LoginForm: FC<LoginFormProps> = ({ locale }) => {
   return (
     <form className="mt-12 space-y-8" onSubmit={handleSubmit(onSubmit)}>
       <div className=" flex flex-col gap-4">
-        <FormError message={error} />
+        <FormError message={error || urlError} />
         <FormSuccess message={success} />
         <div className=" flex flex-col gap-2">
           <label htmlFor="email" className=" font-semibold">
