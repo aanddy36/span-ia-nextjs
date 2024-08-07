@@ -3,10 +3,11 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import db from "@/lib/db";
 import authConfig from "@/auth.config";
 import { getUserById } from "@/utils/getUserBy";
+import { formatDate } from "@/utils/formatDate";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(db),
-  session: { strategy: "jwt" },
+  session: { strategy: "jwt", maxAge: 60 * 24 * 60 },
   ...authConfig,
   pages: {
     signIn: "/login",
@@ -14,10 +15,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   callbacks: {
     async jwt({ token }) {
+      /* console.log(token); */
+      /* console.log(formatDate(token.iat));
+      console.log(formatDate(token.exp)); */
+
       if (token.sub) {
         const user = await getUserById(token.sub);
+        /* console.log(user); */
+
         if (user) {
           token.role = user?.role;
+          token.phone = user?.phone;
         }
       }
 
@@ -26,6 +34,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     async session({ session, token }) {
       if (token.sub && session.user) {
         session.user.role = token.role as any;
+        session.user.phone = token.phone as any;
+        session.user.id = token.sub;
       }
       return session;
     },

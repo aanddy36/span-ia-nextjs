@@ -12,22 +12,25 @@ import settings from "@/public/setting.svg";
 import logoutLogo from "@/public/logout.svg";
 import usePaths from "@/hooks/usePaths";
 import { signOut } from "next-auth/react";
-import { useSession } from "@/contexts/SessionContext";
 import { getAdminOrUser } from "@/utils/getAdminOrUser";
+import { useUser } from "@/contexts/UserContext";
 
 export const DropdownProfile = () => {
   const { locale } = usePaths();
   const t = useTranslations("navbar");
-  const { session } = useSession();
-  const path = getAdminOrUser(session?.user.role);
+  const { user } = useUser();
+
+  const path = getAdminOrUser(user?.role);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="outline-none rounded-full">
         <Image
-          src={thePhoto}
+          src={user?.image ? user.image : thePhoto}
           alt="Profile photo"
-          className="w-[40px] h-[40px] rounded-full"
+          width={40}
+          height={40}
+          className="rounded-full"
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent>

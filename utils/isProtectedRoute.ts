@@ -3,7 +3,7 @@
  * @param {string} fullPath The current path
  */
 
-const protectedPaths = ["profile"];
+const protectedPaths = ["profile", "logout"];
 
 export const isProtectedRoute = (fullPath: string) => {
   const pathArray = fullPath.split("/"); //['','es','profile']

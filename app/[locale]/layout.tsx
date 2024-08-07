@@ -7,8 +7,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { Footer } from "../_components/organisms/footer";
 
 import { auth } from "@/lib/auth";
-import { SessionProvider } from "@/contexts/SessionContext";
+import { UserProvider } from "@/contexts/UserContext";
 import { Messages } from "@/global";
+import ToastProvider from "@/contexts/ToastProvider";
 
 const poppins = Poppins({
   weight: ["200", "400", "600", "800"],
@@ -45,20 +46,19 @@ export default async function RootLayout({
 }) {
   const messages = (await getMessages({ locale })) as Messages;
   const session = await auth();
-/*   console.log("Session:");
-
-  console.log(session); */
 
   return (
     <body className={poppins.className}>
       <NextIntlClientProvider messages={messages}>
-        <SessionProvider authSession={session}>
-          <main className="min-h-screen flex flex-col ">
-            <Navbar/>
-            <div className="grow w-full">{children}</div>
-            <Footer messages={messages} locale={locale} />
-          </main>
-        </SessionProvider>
+        <UserProvider authUser={session ? (session.user as any) : null}>
+          <ToastProvider>
+            <main className="min-h-screen flex flex-col ">
+              <Navbar />
+              <div className="grow w-full">{children}</div>
+              <Footer messages={messages} locale={locale} />
+            </main>
+          </ToastProvider>
+        </UserProvider>
       </NextIntlClientProvider>
     </body>
   );

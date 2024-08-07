@@ -131,7 +131,31 @@
       "title": "User",
       "description": "User page of SpanIA"
     },
-    "title": "User"
+    "userInfo": {
+      "img": "Change your image",
+      "classes": "classes",
+      "class": "class",
+      "joinedIn": "Joined in",
+      "phone": "Phone",
+      "email": "Email",
+      "empty": "Empty",
+      "nameLabel": "Full Name",
+      "settings": "Settings",
+      "cancelBtn": "Cancel",
+      "confirmBtn": "Confirm",
+      "nameError": "The name must have at least 4 characters.",
+      "nameLetterError": "The name must only have letters.",
+      "phoneError": "The phone number must have 10 digits or be empty.",
+      "updateError": "Error updating your information. Please try again later.",
+      "updateSuccess": "Your information has been successfully updated."
+    },
+    "classesList": {
+      "title": "Classes",
+      "empty": "No classes yet.",
+      "done": "Done",
+      "inProgress": "In progress",
+      "inComing": "In coming"
+    }
   },
   "adminPage": {
     "metadata": {

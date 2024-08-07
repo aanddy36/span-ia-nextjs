@@ -131,7 +131,31 @@
       "title": "Usuario",
       "description": "Página de usuario de SpanIA"
     },
-    "title": "Usuario"
+    "userInfo": {
+      "img": "Cambia tu imagen",
+      "classes": "clases",
+      "class": "clase",
+      "joinedIn": "Se unió en",
+      "phone": "Teléfono",
+      "email": "Email",
+      "empty": "Vacío",
+      "nameLabel": "Nombre Completo",
+      "settings": "Ajustes",
+      "cancelBtn": "Cancelar",
+      "confirmBtn": "Confirmar",
+      "nameError": "El nombre debe tener por lo menos 4 caracteres.",
+      "nameLetterError": "El nombre solo debe contener letras.",
+      "phoneError": "El teléfono debe tener 10 dígitos o estar vacío.",
+      "updateError": "Error al actualizar tus datos. Inténtalo de nuevo más tarde.",
+      "updateSuccess": "Tus datos se han actualizado con éxito."
+    },
+    "classesList": {
+      "title": "Clases",
+      "empty": "Aún no hay clases.",
+      "done": "Completado",
+      "inProgress": "En progreso",
+      "inComing": "Próximamente"
+    }
   },
   "adminPage": {
     "metadata": {

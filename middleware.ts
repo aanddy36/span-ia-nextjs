@@ -5,6 +5,9 @@ import authConfig from "@/auth.config";
 import { getPathname } from "@/utils/getPathname";
 import { isProtectedRoute } from "@/utils/isProtectedRoute";
 import { isAuthRoute } from "./utils/isAuthRoute";
+import { getToken } from "next-auth/jwt";
+import { isTokenExpired } from "./utils/isTokenExpired";
+import { logout } from "./actions/logout";
 
 // Configuración de next-intl
 const intlMiddleware = createIntlMiddleware({
@@ -21,6 +24,15 @@ export default auth(async (req) => {
   const isLoggedIn = !!req.auth;
   const isProtected = isProtectedRoute(nextUrl.pathname);
   const isAuth = isAuthRoute(nextUrl.pathname);
+
+  const secret = process.env.AUTH_SECRET;
+
+  if (!secret) {
+    throw new Error("AUTH_SECRET is not defined.");
+  }
+  const token = await getToken({ req, secret });
+  const tokenExpired = isTokenExpired(token?.exp);
+
 
   //AUTENTICACION
 

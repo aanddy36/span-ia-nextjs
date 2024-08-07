@@ -1,4 +1,4 @@
-import { useSession } from "@/contexts/SessionContext";
+import { useUser } from "@/contexts/UserContext";
 import usePaths from "@/hooks/usePaths";
 import { NavbarMessages } from "@/types/modals";
 import { getAdminOrUser } from "@/utils/getAdminOrUser";
@@ -20,8 +20,8 @@ const NavbarLink = ({
   const { locale, path } = usePaths();
   const t = useTranslations("navbar");
 
-  const { session } = useSession();
-  const subRoute = getAdminOrUser(session?.user.role);
+  const { user } = useUser();
+  const subRoute = getAdminOrUser(user?.role);
 
   let href = route === "other" ? `/${locale}/${linkPath}` : `/${locale}`;
   if (linkPath === "profile") {

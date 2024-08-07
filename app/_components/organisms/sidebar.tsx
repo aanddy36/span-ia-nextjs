@@ -6,8 +6,8 @@ import { useTranslations } from "next-intl";
 import { Dispatch, FC, SetStateAction } from "react";
 import usePaths from "@/hooks/usePaths";
 import NavbarLink from "@/app/_components/atoms/NavbarLink";
-import { useSession } from "@/contexts/SessionContext";
 import { signOut } from "next-auth/react";
+import { useUser } from "@/contexts/UserContext";
 
 interface SidebarProps {
   isSidebarOpen: boolean;
@@ -20,7 +20,7 @@ export const Sidebar: FC<SidebarProps> = ({
 }) => {
   const { locale } = usePaths();
   const t = useTranslations("navbar");
-  const { isLoggedIn } = useSession();
+  const { isLoggedIn } = useUser();
 
   return (
     <nav
