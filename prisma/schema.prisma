@@ -20,15 +20,16 @@ enum UserRole {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String        @id @default(cuid())
   name          String
-  email         String    @unique
+  email         String        @unique
   emailVerified DateTime?
   image         String?
   password      String?
   phone         String?
-  role          UserRole  @default(USER)
+  role          UserRole      @default(USER)
   accounts      Account[]
+  classes       SingleClass[]
 }
 
 model Account {
@@ -48,4 +49,27 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+}
+
+model Configuration {
+  id           String        @id @default(cuid())
+  address      String
+  phone        String
+  pricePerHour Int
+  image        String
+  classes      SingleClass[]
+}
+
+model SingleClass {
+  id              String   @id @default(cuid())
+  duration        String
+  price           Int
+  startOn         DateTime
+  endsOn          DateTime
+  studentId       String
+  configurationId String
+  createdAt       DateTime @default(now())
+
+  student       User          @relation(fields: [studentId], references: [id])
+  configuration Configuration @relation(fields: [configurationId], references: [id])
 }

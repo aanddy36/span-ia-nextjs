@@ -52,7 +52,7 @@ export default async function RootLayout({
       <NextIntlClientProvider messages={messages}>
         <UserProvider authUser={session ? (session.user as any) : null}>
           <ToastProvider>
-            <main className="min-h-screen flex flex-col ">
+            <main className="min-h-screen grid grid-rows-[auto_1fr_auto]">
               <Navbar />
               <div className="grow w-full">{children}</div>
               <Footer messages={messages} locale={locale} />

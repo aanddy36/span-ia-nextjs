@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth";
-import { ClassesType, Messages } from "@/types/modals";
+import { Messages } from "@/types/modals";
 import { UserRole } from "@prisma/client";
 import { getMessages } from "next-intl/server";
 import { redirect } from "next/navigation";
@@ -8,7 +8,7 @@ import UserClasses from "@/app/_components/organisms/user-classes";
 import UserContainer from "@/app/_components/organisms/user-container";
 import { UserSettingsProvider } from "@/contexts/UserSettingsContext";
 import LoadingInfo from "@/app/_components/atoms/LoadingInfo";
-import { Suspense, use } from "react";
+import { Suspense } from "react";
 import { fetchRequest } from "@/utils/fetchRequest";
 
 export async function generateMetadata({
@@ -26,19 +26,16 @@ export async function generateMetadata({
 
 const page = async ({ params: { locale } }: { params: { locale: string } }) => {
   const session = await auth();
-  const user = await fetchRequest(
-    `/api/user/settings/${session?.user.id}`,
-    "settings"
+  const { success, error } = await fetchRequest(
+    `/api/user/settings/${session?.user.id}`
   );
-
-  const classes: ClassesType[] = [];
 
   if (session?.user.role !== UserRole.USER) {
     redirect("/not-allowed");
   }
 
   return (
-    <UserSettingsProvider user={user}>
+    <UserSettingsProvider user={success}>
       <UserContainer>
         <section
           className=" laptop:w-[300px] bg-white rounded-lg flex flex-col items-center relative min-h-full justify-center
@@ -50,7 +47,7 @@ const page = async ({ params: { locale } }: { params: { locale: string } }) => {
             </Suspense>
           }
         </section>
-        <UserClasses locale={locale} classes={classes} />
+        <UserClasses locale={locale} />
       </UserContainer>
     </UserSettingsProvider>
   );

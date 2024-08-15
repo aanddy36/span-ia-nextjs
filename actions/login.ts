@@ -30,7 +30,6 @@ export const login = async (locale: string, formData: LoginSchemaType) => {
       password,
       redirectTo: `/${locale}/profile/${path}`,
     });
-    console.log({ error: "", success });
 
     return { error: "", success };
   } catch (error) {

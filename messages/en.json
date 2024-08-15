@@ -152,6 +152,8 @@
     "classesList": {
       "title": "Classes",
       "empty": "No classes yet.",
+      "startNow": "Start now",
+      "error":"There was a mistake loading the information.",
       "done": "Done",
       "inProgress": "In progress",
       "inComing": "In coming"

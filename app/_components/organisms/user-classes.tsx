@@ -1,35 +1,21 @@
-import { ClassesType, Messages } from "@/types/modals";
+import { Messages } from "@/types/modals";
 import { getMessages } from "next-intl/server";
 import { FC } from "react";
+import ClassesList from "./classes-list";
 
 interface UserClassesProps {
   locale: string;
-  classes: ClassesType[];
 }
 
-const UserClasses: FC<UserClassesProps> = async ({ locale, classes }) => {
+const UserClasses: FC<UserClassesProps> = async ({ locale }) => {
   const {
     userPage: { classesList },
   } = (await getMessages({ locale })) as Messages;
 
   return (
-    <section className="grow bg-white rounded-lg py-6 px-3 laptop:px-6 flex flex-col">
+    <section className="grow bg-white rounded-lg py-6 px-3 laptop:px-6 flex flex-col min-h-full gap-0">
       <div className=" text-2xl border-b pb-2">{classesList.title}</div>
-      <ul className=" grow overflow-auto pt-2 max-h-[290px]">
-        {!classes.length ? (
-          <div className=" py-6 italic opacity-50 h-full text-center text-xl">
-            {classesList.empty}
-          </div>
-        ) : (
-          <>
-            {classes.map((item) => {
-              return {
-                /* <MiniClass key={item.id} {...item} /> */
-              };
-            })}
-          </>
-        )}
-      </ul>
+      <ClassesList />
     </section>
   );
 };

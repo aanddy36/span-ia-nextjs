@@ -3,11 +3,10 @@
  * @param {string} path Ex: "/api/user/settings/1234343"
  */
 
-export const fetchRequest = async (path: string, tag:string) => {
-    console.log("Hola");
-    
+export const fetchRequest = async (path: string) => {
   const URL = process.env.WEB_URL;
-  const res = await fetch(`${URL}${path}`, { next: { tags: [tag] } });
+  const res = await fetch(`${URL}${path}`);
   const data = await res.json();
+
   return data;
 };

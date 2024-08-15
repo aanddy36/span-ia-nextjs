@@ -17,43 +17,41 @@ const UserInfo: FC<UserInfoProps> = async ({ locale, id }) => {
   const {
     userPage: { userInfo },
   } = (await getMessages({ locale })) as Messages;
-  const URL = process.env.WEB_URL;
-  const res = await fetch(`${URL}/api/user/settings/${id}`, {
-    next: { tags: ["settings"] },
-  });
-  const user = await res.json();
-  console.log(user);
+
+  const { success, error } = await fetchRequest(`/api/user/settings/${id}`);
+
+  if (error) {
+    return <span className=" text-center italic opacity-60">{error}</span>;
+  }
 
   return (
     <>
       <UserSettingsBtn />
       <div className="border relative rounded-full mx-auto">
         <Image
-          src={user?.image ? user.image : thePhoto}
+          src={success?.image ? success.image : thePhoto}
           alt="No photo"
           className=" w-[91px] h-[91px] rounded-full"
           width={100}
           height={100}
         />
       </div>
-      <h1 className=" text-2xl font-medium mt-6 text-center">{user?.name}</h1>
+      <h1 className=" text-2xl font-medium mt-6 text-center">
+        {success?.name}
+      </h1>
       <ul className=" opacity-50 text-[14px] mt-6 flex flex-col gap-2 w-full">
         <li className=" flex flex-col items-start gap-1">
           <span className=" font-semibold capitalize">{userInfo.classes}</span>
-          <span>0 {userInfo.classes}</span>
+          <span>{success?.classes} {userInfo.classes}</span>
         </li>
         <li className=" flex flex-col items-start gap-1">
           <span className=" font-semibold capitalize">{userInfo.email}</span>
-          <span>{user?.email}</span>
+          <span>{success?.email}</span>
         </li>
         <li className=" flex flex-col items-start gap-1">
           <span className=" font-semibold capitalize">{userInfo.phone}</span>
-          <span>{user?.phone ? user.phone : userInfo.empty}</span>
+          <span>{success?.phone ? success.phone : userInfo.empty}</span>
         </li>
-        {/* <li className=" flex flex-col items-start gap-1">
-          <span className=" font-semibold capitalize">{userInfo.joinedIn}</span>
-          <span> Jun 4,2024</span>
-        </li> */}
       </ul>
     </>
   );

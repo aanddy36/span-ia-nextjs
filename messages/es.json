@@ -152,6 +152,8 @@
     "classesList": {
       "title": "Clases",
       "empty": "Aún no hay clases.",
+      "startNow": "Empieza ahora",
+      "error":"Hubo un error al cargar la información.",
       "done": "Completado",
       "inProgress": "En progreso",
       "inComing": "Próximamente"

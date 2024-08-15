@@ -17,7 +17,6 @@ import { postRequest } from "@/utils/postRequest";
 import { showToast } from "@/utils/showToast";
 import { ClipLoader } from "react-spinners";
 import { useUser } from "@/contexts/UserContext";
-import { revalidatePath, revalidateTag } from "next/cache";
 import { useRouter } from "next/navigation";
 
 const UserChangeSettings = () => {
