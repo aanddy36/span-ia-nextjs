@@ -13,7 +13,7 @@ export async function authenticateUser(req: Request, userId: string) {
 
   
   const token = await getToken({ req, secret });
-  console.log(`token:${token}`);
+  /* console.log(`token:${token}`); */
 
   // Si el token no existe, rechazar el request
   if (!token) {

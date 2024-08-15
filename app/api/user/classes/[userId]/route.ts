@@ -1,3 +1,4 @@
+import { authenticateUser } from "@/utils/authenticateUser";
 import { getUserMiniClassesById } from "@/utils/getUserClasses";
 
 export async function GET(
@@ -5,6 +6,20 @@ export async function GET(
   { params }: { params: { userId: string } }
 ) {
   const { userId } = params;
+  // AUTHENTICATE TOKEN AND USER
+  try {
+    const authResult = await authenticateUser(req, userId);
+    if (authResult) {
+      return Response.json({ error: authResult, success: "" }, { status: 500 });
+    }
+  } catch (error) {
+    console.log(error);
+    return Response.json(
+      { error: "Something went wrong", success: "" },
+      { status: 500 }
+    );
+  }
+
   try {
     const classes = await getUserMiniClassesById(userId);
     return Response.json({ success: classes, error: "" });
