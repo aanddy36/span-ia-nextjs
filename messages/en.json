@@ -153,7 +153,7 @@
       "title": "Classes",
       "empty": "No classes yet.",
       "startNow": "Start now",
-      "error":"There was a mistake loading the information.",
+      "error": "There was a mistake loading the information.",
       "done": "Done",
       "inProgress": "In progress",
       "inComing": "In coming"
@@ -161,8 +161,36 @@
   },
   "adminPage": {
     "metadata": {
-      "title": "Admin",
-      "description": "Admin page of SpanIA"
+      "titleHome": "Admin Home",
+      "descriptionHome": "Admin page of SpanIA",
+      "titleClasses": "Admin Classes",
+      "descriptionClasses": "All the classes of all the users",
+      "titleStudents": "Admin Students",
+      "descriptionStudents": "All the enroled students",
+      "titleSettings": "Admin Settings",
+      "descriptionSettings": "Admin settings page of SpanIA"
+    },
+    "sidebar": {
+      "home": "Home",
+      "classes": "Classes",
+      "students": "Students",
+      "settings": "Settings",
+      "altHome": "Home icon",
+      "altClasses": "Classes icon",
+      "altStudents": "Students icon",
+      "altSettings": "Settings icon"
+    },
+    "homePage": {
+      "title": "Home"
+    },
+    "classesPage": {
+      "title": "Classes"
+    },
+    "studentsPage": {
+      "title": "Students"
+    },
+    "settingsPage": {
+      "title": "Settings"
     },
     "title": "Admin"
   },

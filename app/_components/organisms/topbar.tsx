@@ -21,7 +21,7 @@ const Topbar: FC<TopbarProps> = ({ setIsSidebarOpen }) => {
   const t = useTranslations("navbar");
 
   return (
-    <nav className="px-10 py-4 flex justify-between w-full items-center shadow-md shadow-black/10">
+    <nav className="px-10 py-4 flex justify-between w-full items-center shadow-md shadow-black/10 relative z-[2]">
       <Link href={`/${locale}`}>
         <Image src={logo} alt="Logo" />
       </Link>

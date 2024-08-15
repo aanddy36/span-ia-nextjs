@@ -153,7 +153,7 @@
       "title": "Clases",
       "empty": "Aún no hay clases.",
       "startNow": "Empieza ahora",
-      "error":"Hubo un error al cargar la información.",
+      "error": "Hubo un error al cargar la información.",
       "done": "Completado",
       "inProgress": "En progreso",
       "inComing": "Próximamente"
@@ -161,8 +161,36 @@
   },
   "adminPage": {
     "metadata": {
-      "title": "Admin",
-      "description": "Página de admin de SpanIA"
+      "titleHome": "Inicio Admin",
+      "descriptionHome": "Página de administración de SpanIA",
+      "titleClasses": "Clases Admin",
+      "descriptionClasses": "Todas las clases de todos los usuarios",
+      "titleStudents": "Estudiantes Admin",
+      "descriptionStudents": "Todos los estudiantes inscritos",
+      "titleSettings": "Configuración Admin",
+      "descriptionSettings": "Página de configuración de administración de SpanIA"
+    },
+    "sidebar": {
+      "home": "Inicio",
+      "classes": "Clases",
+      "students": "Estudiantes",
+      "settings": "Ajustes",
+      "altHome": "Ícono de inicio",
+      "altClasses": "Ícono de clases",
+      "altStudents": "Ícono de estudiantes",
+      "altSettings": "Ícono de ajustes"
+    },
+    "homePage": {
+      "title": "Inicio"
+    },
+    "classesPage": {
+      "title": "Clases"
+    },
+    "studentsPage": {
+      "title": "Estudiantes"
+    },
+    "settingsPage": {
+      "title": "Ajustes"
     },
     "title": "Admin"
   },

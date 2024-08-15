@@ -1,5 +1,5 @@
+import { Messages } from "@/global";
 import { auth } from "@/lib/auth";
-import { Messages } from "@/types/modals";
 import { UserRole } from "@prisma/client";
 import { getMessages } from "next-intl/server";
 import { redirect } from "next/navigation";
@@ -11,15 +11,15 @@ export async function generateMetadata({
 }) {
   const {
     adminPage: {
-      metadata: { titleHome, descriptionHome },
+      metadata: { titleClasses, descriptionClasses },
     },
   } = (await getMessages({ locale })) as Messages;
-  return { title: titleHome, description: descriptionHome };
+  return { title: titleClasses, description: descriptionClasses };
 }
 
 const page = async ({ params: { locale } }: { params: { locale: string } }) => {
   const {
-    adminPage: { homePage },
+    adminPage: { classesPage },
   } = (await getMessages({ locale })) as Messages;
   const session = await auth();
 
@@ -27,7 +27,7 @@ const page = async ({ params: { locale } }: { params: { locale: string } }) => {
     redirect("/not-allowed");
   }
 
-  return <div className="bg-notAvail h-full">{homePage.title}</div>;
+  return <div className="bg-notAvail h-full">{classesPage.title}</div>;
 };
 
 export default page;
