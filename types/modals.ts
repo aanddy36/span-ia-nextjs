@@ -70,24 +70,30 @@ export interface MiniClasses {
   professorAddress: string;
 }
 
-export interface Classes {
+export interface ClassesType {
   id: string;
   duration: DurationOptions;
   price: number;
   createdAt: Date;
-  startsOn: Date;
+  startOn: Date;
   endsOn: Date;
   studentId: string;
-  studentPhone: string;
-  studentName: string;
-  studentEmail: string;
-  professorId: string;
-  professorPhone: string;
-  professorAddress: string;
+  configurationId: string;
+  student: User;
+  configuration: ConfigutationType;
 }
 
-export const sessions: Classes[] = [
-/*   {
+export interface ConfigutationType {
+  id: string;
+  address: string;
+  phone: string;
+  pricePerHour: number;
+  image: string;
+  classes: ClassesType[];
+}
+
+export const sessions: ClassesType[] = [
+  /*   {
       id: "65b34246745aba856d3b0f6e",
       duration: DurationOptions.SHORT,
       price: 12,

@@ -57,7 +57,9 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
           {t("settings")}
         </Link>
       </ul>
-      {children}
+      <div className="bg-notAvail px-12 py-10 h-full grow">
+        {children}
+      </div>
     </section>
   );
 };

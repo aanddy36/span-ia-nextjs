@@ -190,7 +190,17 @@
       "title": "Estudiantes"
     },
     "settingsPage": {
-      "title": "Ajustes"
+      "title": "Ajustes",
+      "priceError": "El precio mínimo por hora debe ser $5",
+      "priceNotNumberError": "El precio por hora debe contener solo números",
+      "phoneError": "Por favor, escribe un número de 10 dígitos",
+      "addressError": "Por favor, escribe una dirección válida",
+      "modifyLabel": "Cambiar Horario",
+      "modifyBtn": "Abrir Editor",
+      "priceLabel": "Precio por hora",
+      "phoneLabel": "Teléfono",
+      "addressLabel": "Dirección",
+      "submitBtn": "Enviar Cambios"
     },
     "title": "Admin"
   },

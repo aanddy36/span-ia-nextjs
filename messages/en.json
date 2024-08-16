@@ -190,7 +190,17 @@
       "title": "Students"
     },
     "settingsPage": {
-      "title": "Settings"
+      "title": "Settings",
+      "priceError": "Minimum price per hour must be $5",
+      "priceNotNumberError": "The price must be a number",
+      "phoneError": "Please write a 10-digits phone number",
+      "addressError": "Please write a valid address",
+      "modifyLabel": "Modify Schedule",
+      "modifyBtn": "Open Editor",
+      "priceLabel": "Price per hour",
+      "phoneLabel": "Phone",
+      "addressLabel": "Address",
+      "submitBtn": "Submit Changes"
     },
     "title": "Admin"
   },
