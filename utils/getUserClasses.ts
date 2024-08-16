@@ -35,6 +35,6 @@ export const getUserMiniClassesById = async (id: string) => {
     });
     return formatedClasses;
   } catch (error) {
-    console.log(error);
+    throw new Error()
   }
 };

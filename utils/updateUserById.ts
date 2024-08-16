@@ -10,6 +10,6 @@ export const updateUserById = async (id: string, data: object) => {
     });
     return updateUser;
   } catch (error) {
-    console.log(error);
+    throw new Error()
   }
 };

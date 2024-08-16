@@ -200,7 +200,9 @@
       "priceLabel": "Precio por hora",
       "phoneLabel": "Teléfono",
       "addressLabel": "Dirección",
-      "submitBtn": "Enviar Cambios"
+      "submitBtn": "Enviar Cambios",
+      "updateError": "Error al actualizar tus datos. Inténtalo de nuevo más tarde.",
+      "updateSuccess": "Tus datos se han actualizado con éxito."
     },
     "title": "Admin"
   },

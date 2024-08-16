@@ -9,6 +9,6 @@ export const getConfiguration = async () => {
 
     return settings;
   } catch (error) {
-    console.log(error);
+    throw new Error()
   }
 };

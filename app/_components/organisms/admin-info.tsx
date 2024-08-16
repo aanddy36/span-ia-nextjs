@@ -10,20 +10,20 @@ import {
 } from "@/schemas/adminSettings";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
+import { ClipLoader } from "react-spinners";
+import { showToast } from "@/utils/showToast";
+import { postRequest } from "@/utils/postRequest";
+import { useRouter } from "next/navigation";
 
 const AdminInfo = ({
   address,
   phone,
   pricePerHour,
 }: Pick<ConfigutationType, "address" | "phone" | "pricePerHour">) => {
-  const initialValues = {
-    address,
-    phone,
-    pricePerHour: String(pricePerHour),
-  };
-
   const t = useTranslations("adminPage.settingsPage");
+  const router = useRouter();
   const [isChanged, setIsChanged] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const AdminSettingsSchema = useAdminSettingsSchema();
 
   const {
@@ -33,7 +33,11 @@ const AdminInfo = ({
     formState: { errors },
   } = useForm<AdminSettingsSchemaType>({
     resolver: zodResolver(AdminSettingsSchema),
-    defaultValues: initialValues,
+    defaultValues: {
+      address,
+      phone,
+      pricePerHour: String(pricePerHour),
+    },
   });
 
   let pricePerHourField = watch("pricePerHour");
@@ -41,9 +45,9 @@ const AdminInfo = ({
   let addressField = watch("address");
 
   useEffect(() => {
-    const isSamePrice = initialValues.pricePerHour === pricePerHourField;
-    const isSamePhone = initialValues.phone === phoneField;
-    const isSameAddress = initialValues.address === addressField;
+    const isSamePrice = String(pricePerHour) === pricePerHourField;
+    const isSamePhone = phone === phoneField;
+    const isSameAddress = address === addressField;
 
     // Update the isChanged state based on comparison
     if (!isSamePrice || !isSamePhone || !isSameAddress) {
@@ -51,10 +55,30 @@ const AdminInfo = ({
     } else {
       setIsChanged(false);
     }
-  }, [pricePerHourField, phoneField, addressField]);
+  }, [
+    pricePerHourField,
+    phoneField,
+    addressField,
+    address,
+    phone,
+    pricePerHour,
+  ]);
 
-  const onSubmit = (data: AdminSettingsSchemaType) => {
-    console.log(data);
+  const onSubmit = async (data: AdminSettingsSchemaType) => {
+    setIsLoading(true);
+    try {
+      const res = await postRequest("/api/admin/settings", data);
+      if (res.success) {
+        showToast("success", t("updateSuccess"));
+        router.refresh();
+      } else {
+        showToast("error", t("updateError"));
+      }
+    } catch (error) {
+      showToast("error", t("updateError"));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -69,10 +93,11 @@ const AdminInfo = ({
         <div className="flex flex-col items-start">
           <input
             className="py-1 px-3 rounded-lg border text-[14px] focus:outline-none focus:ring-2 focus:ring-red
-          border-neutral-300"
+          border-neutral-300 disabled:bg-notAvail disabled:opacity-70"
             id="price"
             type="number"
             {...register("pricePerHour")}
+            disabled={isLoading}
           />
           {errors.pricePerHour && (
             <span className="text-red font-medium text-[12px] mt-2">
@@ -91,9 +116,10 @@ const AdminInfo = ({
         <div className="flex flex-col items-start">
           <input
             className="py-1 px-3 rounded-lg border text-[14px] focus:outline-none focus:ring-2 focus:ring-red
-       border-neutral-300"
+       border-neutral-300 disabled:bg-notAvail disabled:opacity-70"
             id="phone"
             {...register("phone")}
+            disabled={isLoading}
           />
           {errors.phone && (
             <span className="text-red font-medium text-[12px] mt-2">
@@ -112,9 +138,10 @@ const AdminInfo = ({
         <div className="flex flex-col items-start">
           <input
             className="py-1 px-3 rounded-lg border text-[14px] focus:outline-none focus:ring-2 focus:ring-red
-            border-neutral-300"
+            border-neutral-300 disabled:bg-notAvail disabled:opacity-70"
             id="address"
             {...register("address")}
+            disabled={isLoading}
           />
           {errors.address && (
             <span className="text-red font-medium text-[12px] mt-2">
@@ -125,10 +152,10 @@ const AdminInfo = ({
       </div>
       <Button
         variant="red"
-        className=" h-fit px-3 py-1 w-fit mt-6"
-        disabled={!isChanged}
+        className=" h-fit px-3 py-1 w-[200px] mt-6"
+        disabled={!isChanged || isLoading}
       >
-        {t("submitBtn")}
+        {isLoading ? <ClipLoader color=" white" size={20} /> : t("submitBtn")}
       </Button>
     </form>
   );

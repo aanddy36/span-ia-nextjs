@@ -200,7 +200,9 @@
       "priceLabel": "Price per hour",
       "phoneLabel": "Phone",
       "addressLabel": "Address",
-      "submitBtn": "Submit Changes"
+      "submitBtn": "Submit Changes",
+      "updateError": "Error updating your information. Please try again later.",
+      "updateSuccess": "Your information has been successfully updated."
     },
     "title": "Admin"
   },
