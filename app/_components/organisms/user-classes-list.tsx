@@ -8,7 +8,7 @@ import { MiniClasses } from "@/types/modals";
 import MiniClass from "@/app/_components/molecules/MiniClass";
 import { useUser } from "@/contexts/UserContext";
 
-const ClassesList = () => {
+const UserClassesList = () => {
   const { locale } = usePaths();
   const t = useTranslations("userPage.classesList");
   const [classes, setClasses] = useState<MiniClasses[]>([]);
@@ -75,4 +75,4 @@ const ClassesList = () => {
   );
 };
 
-export default ClassesList;
+export default UserClassesList;

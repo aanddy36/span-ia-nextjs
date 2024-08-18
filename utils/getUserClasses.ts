@@ -5,6 +5,7 @@ export const getUserMiniClassesById = async (id: string) => {
   let formatedClasses: MiniClasses[] = [];
   try {
     const classes = await db.singleClass.findMany({
+      orderBy:{startOn:"desc"},
       where: { studentId: id },
       include: {
         configuration: {

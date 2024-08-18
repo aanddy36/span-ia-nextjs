@@ -184,7 +184,26 @@
       "title": "Inicio"
     },
     "classesPage": {
-      "title": "Clases"
+      "title": "Clases",
+      "allFilter": "Todos",
+      "doneFilter": "Completado",
+      "inProgressFilter": "En progreso",
+      "inComingFilter": "Próximos",
+      "sortByDateFirst": "Ordenar por fecha (más recientes primero)",
+      "sortByDateLate": "Ordenar por fecha (más antiguos primero)",
+      "idHeader": "ID",
+      "studentHeader": "estudiante",
+      "dateHeader": "fecha",
+      "statusHeader": "estado",
+      "amountHeader": "cantidad",
+      "errorFetching": "Algo ocurrió mal. Intenta de nuevo más tarde.",
+      "emptyClasses": "Aún no hay clases.",
+      "showing": "Mostrando",
+      "to": "a",
+      "of": "de",
+      "results": "resultados",
+      "previous": "Anterior",
+      "next": "Siguiente"
     },
     "studentsPage": {
       "title": "Estudiantes"

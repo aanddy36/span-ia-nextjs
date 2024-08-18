@@ -70,6 +70,17 @@ export interface MiniClasses {
   professorAddress: string;
 }
 
+export interface AdminClasses {
+  id: string;
+  price: number;
+  startOn: Date;
+  endsOn: Date;
+  student: {
+    name: string;
+    email: string;
+  };
+}
+
 export interface ClassesType {
   id: string;
   duration: DurationOptions;
@@ -90,6 +101,25 @@ export interface ConfigutationType {
   pricePerHour: number;
   image: string;
   classes: ClassesType[];
+}
+
+export interface ClassFilters {
+  label: string;
+  slug: StatusSlug;
+}
+
+export type FiltersKeys = "status" | "sortBy" | "page";
+
+export enum StatusSlug {
+  ALL = "all",
+  DONE = "done",
+  IN_PROGRESS = "in-progress",
+  IN_COMING = "in-coming",
+}
+
+export enum SortBySlug {
+  DATE_FIRST = "date-first",
+  DATE_LAST = "date-last",
 }
 
 export const sessions: ClassesType[] = [

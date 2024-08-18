@@ -1,4 +1,5 @@
 import { AdminSettingsSchema } from "@/schemas/adminSettings";
+import { authenticateUser } from "@/utils/authenticateUser";
 import { getConfiguration } from "@/utils/getConfiguration";
 import { updateAdminSettings } from "@/utils/updateAdminSettings";
 
@@ -22,6 +23,21 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   const settings = await req.json();
+
+  // AUTHENTICATE TOKEN AND USER
+  try {
+    const authResult = await authenticateUser(req, "clzt9uk730003laz18zjeo6c1");
+    if (authResult) {
+      return Response.json({ error: authResult, success: "" }, { status: 500 });
+    }
+  } catch (error) {
+    console.log(error);
+    return Response.json(
+      { error: "Something went wrong", success: "" },
+      { status: 500 }
+    );
+  }
+
   const validatedFields = AdminSettingsSchema.safeParse(settings);
 
   if (validatedFields.success) {

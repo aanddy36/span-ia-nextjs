@@ -22,11 +22,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
       <ul className=" flex flex-col border-r pt-6 items-center">
         <Link
           href={`/${locale}/profile/admin`}
-          className={`px-6 py-3 text-lg rounded-lg flex gap-4 transition-all duration-200 hover:pl-10 w-[85%] ${
+          className={`px-6 py-3 text-lg rounded-lg flex gap-4 transition-all duration-200 hover:pl-10 w-[85%] h-auto ${
             path === "/admin" ? "bg-notAvail" : ""
           } `}
         >
-          <Image alt={t("altHome")} src={house} />
+          <Image alt={t("altHome")} src={house}/>
           {t("home")}
         </Link>
         <Link

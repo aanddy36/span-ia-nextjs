@@ -184,7 +184,26 @@
       "title": "Home"
     },
     "classesPage": {
-      "title": "Classes"
+      "title": "Classes",
+      "allFilter": "All",
+      "doneFilter": "Done",
+      "inProgressFilter": "In progress",
+      "inComingFilter": "In coming",
+      "sortByDateFirst": "Sort by date (recent first)",
+      "sortByDateLate": "Sort by date (older first)",
+      "idHeader": "ID",
+      "studentHeader": "student",
+      "dateHeader": "date",
+      "statusHeader": "status",
+      "amountHeader": "amount",
+      "errorFetching": "Something went wrong. Try again later.",
+      "emptyClasses": "There are no classes yet.",
+      "showing": "Showing",
+      "to": "to",
+      "of": "of",
+      "results": "results",
+      "previous": "Previous",
+      "next": "Next"
     },
     "studentsPage": {
       "title": "Students"
