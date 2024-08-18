@@ -25,7 +25,7 @@ const page = async ({
   searchParams,
 }: {
   params: { locale: string };
-  searchParams: { status?: StatusSlug; sortBy?: SortBySlug };
+  searchParams: { status?: StatusSlug; sortBy?: SortBySlug; page?: string };
 }) => {
   const {
     adminPage: { classesPage },

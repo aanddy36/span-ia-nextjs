@@ -42,7 +42,7 @@ const UserClassesList = () => {
   if (error) {
     return (
       <span className=" pt-6 italic opacity-50 text-center text-lg">
-        Hubo un error al cargar la información.
+        {t("error")}
       </span>
     );
   }

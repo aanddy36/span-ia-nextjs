@@ -1,15 +1,12 @@
 import React, { FC, Suspense } from "react";
-import TableRow from "@/app/_components/molecules/TableRow";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { getMessages } from "next-intl/server";
 import { Messages, SortBySlug, StatusSlug } from "@/types/modals";
-import { fetchRequest } from "@/utils/fetchRequest";
 import AdminFetchedClasses from "./admin-fetched-classes";
 import LoadingInfo from "../atoms/LoadingInfo";
 
 interface AdminClassesListProps {
   locale: string;
-  searchParams: { status?: StatusSlug; sortBy?: SortBySlug };
+  searchParams: { status?: StatusSlug; sortBy?: SortBySlug; page?: string };
 }
 
 const AdminClassesList: FC<AdminClassesListProps> = async ({

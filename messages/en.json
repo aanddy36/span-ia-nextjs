@@ -258,5 +258,10 @@
       "credentialsError": "Invalid credentials",
       "unknown": "Something went wrong"
     }
+  },
+  "globals": {
+    "in-coming": "In coming",
+    "done": "Done",
+    "in-progress": "In progress"
   }
 }

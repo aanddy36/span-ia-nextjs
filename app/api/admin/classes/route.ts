@@ -6,9 +6,10 @@ export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const status = searchParams.get("status") as StatusSlug | "";
   const sortBy = searchParams.get("sortBy") as SortBySlug | "";
+  const page = searchParams.get("page") as string;
   try {
-    const success = await getAdminClasses(status, sortBy);
-    console.log({ status, sortBy: sortBy });
+    const success = await getAdminClasses(status, sortBy, page);
+    console.log({ status, sortBy, page });
     /* console.log(classes); */
 
     return Response.json({ success, error: "" }, { status: 200 });

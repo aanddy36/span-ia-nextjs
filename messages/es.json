@@ -258,5 +258,10 @@
       "credentialsError": "Credenciales inválidas",
       "unknown": "Ocurrió algo mal"
     }
+  },
+  "globals": {
+    "in-coming": "Próximo",
+    "done": "Completado",
+    "in-progress": "En progreso"
   }
 }
