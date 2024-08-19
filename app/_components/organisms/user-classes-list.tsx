@@ -12,7 +12,7 @@ const UserClassesList = () => {
   const { locale } = usePaths();
   const t = useTranslations("userPage.classesList");
   const [classes, setClasses] = useState<MiniClasses[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const { user } = useUser();
 

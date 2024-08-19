@@ -6,12 +6,41 @@ export const getAdminClasses = async (
   sortBy: SortBySlug | "",
   page: string
 ) => {
-  /* let formatedClasses: MiniClasses[] = []; */
-
+  //Definir el orden por 'sortBy'
   const orderBy = sortBy === SortBySlug.DATE_LAST ? "asc" : "desc";
 
+  //Definir el filtro por 'status'
+  const now = new Date();
+  let where = {};
+
+  switch (status) {
+    case StatusSlug.DONE:
+      where = {
+        endsOn: {
+          lt: now,
+        },
+      };
+      break;
+    case StatusSlug.IN_COMING:
+      where = {
+        startOn: {
+          gt: now,
+        },
+      };
+      break;
+    case StatusSlug.IN_PROGRESS:
+      where = {
+        endsOn: {
+          gte: now,
+        },
+        startOn: {
+          lte: now,
+        },
+      };
+  }
+
   try {
-    const totalClasses = await db.singleClass.count();
+    const totalClasses = await db.singleClass.count({ where });
 
     //Este es el número de página más alto que hay, si se pasa de este, se debe hacer que la página sea 1.
     const maxPossiblePage = Math.ceil(totalClasses / 10);
@@ -19,12 +48,12 @@ export const getAdminClasses = async (
     //Si se pasa de la página más alta, se hace 1
     let finalPage = Math.floor(Number(page));
     if (finalPage > maxPossiblePage) finalPage = 1;
-    console.log(finalPage);
 
     const classes = await db.singleClass.findMany({
       orderBy: {
         startOn: orderBy,
       },
+      where,
       take: 10,
       skip: (finalPage - 1) * 10,
       select: {
@@ -40,25 +69,7 @@ export const getAdminClasses = async (
         },
       },
     });
-
-    /* formatedClasses = classes.map((cl) => {
-        const {
-          id,
-          price,
-          startOn,
-          endsOn,
-          configuration: { address, phone },
-        } = cl;
-        return {
-          id,
-          price,
-          startOn,
-          endsOn,
-          professorAddress: address,
-          professorPhone: phone,
-        };
-      }); */
-    return { classes, totalClasses, page:finalPage };
+    return { classes, totalClasses, page: finalPage };
   } catch (error) {
     throw new Error();
   }

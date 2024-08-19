@@ -206,7 +206,14 @@
       "next": "Siguiente"
     },
     "studentsPage": {
-      "title": "Estudiantes"
+      "title": "Estudiantes",
+      "placeholder": "Busca un estudiante por su nombre",
+      "name": "Nombre",
+      "email": "Email",
+      "classes": "Clases",
+      "errorFetching": "Algo ocurrió mal. Intenta de nuevo más tarde.",
+      "emptyStudents": "Aún no hay estudiantes.",
+            "altImage": "Foto de perfil"
     },
     "settingsPage": {
       "title": "Ajustes",

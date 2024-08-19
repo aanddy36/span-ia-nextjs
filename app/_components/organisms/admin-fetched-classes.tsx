@@ -1,7 +1,6 @@
 import { fetchRequest } from "@/utils/fetchRequest";
 import React, { FC } from "react";
 import TableRow from "@/app/_components/molecules/TableRow";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { AdminClasses, Messages, SortBySlug, StatusSlug } from "@/types/modals";
 import { getMessages } from "next-intl/server";
 import ErrorFetchingClass from "../atoms/ErrorFetchingClass";
@@ -28,7 +27,6 @@ const AdminFetchedClasses: FC<AdminClassesListProps> = async ({
   const { success, error } = await fetchRequest(
     `/api/admin/classes?status=${status}&sortBy=${sortBy}&page=${queryPage}`
   );
-  /* console.log(success); */
 
   if (error) {
     return <ErrorFetchingClass>{classesPage.errorFetching}</ErrorFetchingClass>;

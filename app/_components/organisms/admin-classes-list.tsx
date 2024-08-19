@@ -40,7 +40,7 @@ const AdminClassesList: FC<AdminClassesListProps> = async ({
       </thead>
 
       <Suspense
-        key={`status=${searchParams.status}&sortBy=${searchParams.sortBy}`}
+        key={`status=${searchParams.status}&sortBy=${searchParams.sortBy}&page=${searchParams.page}`}
         fallback={
           <tbody className="bg-white text-center italic opacity-75">
             <td className=" py-6">

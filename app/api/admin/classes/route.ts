@@ -9,8 +9,6 @@ export async function GET(req: NextRequest) {
   const page = searchParams.get("page") as string;
   try {
     const success = await getAdminClasses(status, sortBy, page);
-    console.log({ status, sortBy, page });
-    /* console.log(classes); */
 
     return Response.json({ success, error: "" }, { status: 200 });
   } catch (error) {
