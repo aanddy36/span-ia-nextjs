@@ -181,7 +181,18 @@
       "altSettings": "Settings icon"
     },
     "homePage": {
-      "title": "Home"
+      "title": "Dashboard",
+      "altClasses": "Classes icon",
+      "altSales": "Sales icon",
+      "altStudents": "Students icon",
+      "altHours": "Duration icon",
+      "classes": "Classes",
+      "sales": "sales",
+      "students": "Students",
+      "hours": "hours",
+      "timeSeriesLabel":"Sales time serie",
+      "durationPieLabel":"Duration summary",
+      "errorFetchingStats":"Something went wrong. Try again later."
     },
     "classesPage": {
       "title": "Classes",

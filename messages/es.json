@@ -181,7 +181,18 @@
       "altSettings": "Ícono de ajustes"
     },
     "homePage": {
-      "title": "Inicio"
+      "title": "Panel",
+      "altClasses": "Ícono de clases",
+      "altSales": "Ícono de ventas",
+      "altStudents": "Ícono de estudiantes",
+      "altHours": "Ícono de duración",
+      "classes": "clases",
+      "sales": "Ventas",
+      "students": "Estudiantes",
+      "hours": "horas",
+      "timeSeriesLabel": "Serie de tiempo de ventas",
+      "durationPieLabel": "Resumen de duraciones",
+      "errorFetchingStats": "Algo ocurrió mal. Intenta de nuevo más tarde."
     },
     "classesPage": {
       "title": "Clases",
@@ -213,7 +224,7 @@
       "classes": "Clases",
       "errorFetching": "Algo ocurrió mal. Intenta de nuevo más tarde.",
       "emptyStudents": "Aún no hay estudiantes.",
-            "altImage": "Foto de perfil"
+      "altImage": "Foto de perfil"
     },
     "settingsPage": {
       "title": "Ajustes",
