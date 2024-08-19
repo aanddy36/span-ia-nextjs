@@ -125,3 +125,14 @@ export enum SortBySlug {
 export type AdminStudents = Pick<User, "email" | "name" | "image" | "id"> & {
   _count: { classes: number };
 };
+
+export interface DurationPieType {
+  duration: "60" | "90" | "120";
+  value: number;
+  color: string;
+}
+
+export interface TimeSeriesType {
+  label: string;
+  sales: number;
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   Area,
   AreaChart,
@@ -9,70 +10,54 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import LoadingInfo from "@/app/_components/atoms/LoadingInfo";
+import { useTranslations } from "next-intl";
+import { TimeSeriesType } from "@/types/modals";
 
 export const TimeSeries = () => {
-  const timeSeries = [
-    {
-      label: "2024-01-04",
-      sales: 12,
-    },
-    {
-      label: "2024-01-21",
-      sales: 48,
-    },
-    {
-      label: "2024-01-22",
-      sales: 18,
-    },
-    {
-      label: "2024-01-26",
-      sales: 42,
-    },
-    {
-      label: "2024-01-27",
-      sales: 36,
-    },
-    {
-      label: "2024-01-28",
-      sales: 18,
-    },
-    {
-      label: "2024-01-29",
-      sales: 84,
-    },
-    {
-      label: "2024-02-03",
-      sales: 14,
-    },
-    {
-      label: "2024-02-05",
-      sales: 42,
-    },
-    {
-      label: "2024-02-06",
-      sales: 14,
-    },
-    {
-      label: "2024-02-16",
-      sales: 12,
-    },
-    {
-      label: "2024-02-18",
-      sales: 12,
-    },
-    {
-      label: "2024-02-21",
-      sales: 12,
-    },
-    {
-      label: "2024-02-23",
-      sales: 24,
-    },
-    {
-      label: "2024-07-01",
-      sales: 12,
-    },
-  ];
+  const t = useTranslations("adminPage.homePage");
+
+  const [timeSeries, setTimeSeries] = useState<TimeSeriesType[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      setIsError(false);
+      try {
+        const res = await fetch("/api/admin/classes/timeSeries");
+        const data = await res.json();
+        if (data.error) {
+          setIsError(true);
+        }
+        setTimeSeries(data.success);
+      } catch (error) {
+        console.log(error);
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (isError) {
+    return (
+      <div className=" h-full grid place-content-center italic opacity-75">
+        {t("errorFetchingStats")}
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className=" h-full grid place-content-center">
+        <LoadingInfo />
+      </div>
+    );
+  }
+
   return (
     <div className="grow">
       <ResponsiveContainer width="100%">

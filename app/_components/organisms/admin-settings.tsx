@@ -8,8 +8,6 @@ const AdminSettings = async () => {
     fetchRequest("/api/admin/settings"),
     fetchRequest("/api/user/settings/clzt9npmh0000laz19no7ufm5"),
   ]);
-  /* console.log(settings);
-  console.log(user); */
 
   return (
     <>
