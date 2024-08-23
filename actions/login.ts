@@ -4,7 +4,7 @@ import { Messages } from "@/global";
 import { signIn } from "@/lib/auth";
 import { LoginSchema, LoginSchemaType } from "@/schemas/login";
 import { getAdminOrUser } from "@/utils/getAdminOrUser";
-import { getUserByEmail } from "@/utils/getUserBy";
+import { getUserByEmail } from "@/app/queries/getUserBy";
 import { UserRole } from "@prisma/client";
 import { AuthError } from "next-auth";
 import { getMessages } from "next-intl/server";

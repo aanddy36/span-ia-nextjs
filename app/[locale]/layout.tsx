@@ -10,6 +10,7 @@ import { auth } from "@/lib/auth";
 import { UserProvider } from "@/contexts/UserContext";
 import { Messages } from "@/global";
 import ToastProvider from "@/contexts/ToastProvider";
+import { ConfigurationProvider } from "@/contexts/Configuration";
 
 const poppins = Poppins({
   weight: ["200", "400", "600", "800"],
@@ -51,13 +52,15 @@ export default async function RootLayout({
     <body className={poppins.className}>
       <NextIntlClientProvider messages={messages}>
         <UserProvider authUser={session ? (session.user as any) : null}>
-          <ToastProvider>
-            <main className="min-h-screen grid grid-rows-[auto_1fr_auto]">
-              <Navbar />
-              <div className="grow w-full">{children}</div>
-              <Footer messages={messages} locale={locale} />
-            </main>
-          </ToastProvider>
+          <ConfigurationProvider>
+            <ToastProvider>
+              <main className="min-h-screen grid grid-rows-[auto_1fr_auto]">
+                <Navbar />
+                <div className="grow w-full">{children}</div>
+                <Footer messages={messages} locale={locale} />
+              </main>
+            </ToastProvider>
+          </ConfigurationProvider>
         </UserProvider>
       </NextIntlClientProvider>
     </body>

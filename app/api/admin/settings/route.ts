@@ -1,7 +1,7 @@
 import { AdminSettingsSchema } from "@/schemas/adminSettings";
 import { authenticateUser } from "@/utils/authenticateUser";
-import { getConfiguration } from "@/utils/getConfiguration";
-import { updateAdminSettings } from "@/utils/updateAdminSettings";
+import { getConfiguration } from "@/app/queries/getConfiguration";
+import { updateAdminSettings } from "@/app/queries/updateAdminSettings";
 
 export async function GET(req: Request) {
   try {

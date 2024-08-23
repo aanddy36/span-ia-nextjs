@@ -2,9 +2,9 @@ import { MiniClasses } from "@/types/modals";
 import { formatDate } from "@/utils/formatDate";
 import { formatPrice } from "@/utils/formatPrice";
 import { stringedHour } from "@/utils/stringedHour";
-import React from "react";
 import { StatusSpan } from "@/app/_components/atoms/StatusSpan";
 import { classStatus } from "@/utils/classStatus";
+import usePaths from "@/hooks/usePaths";
 
 const MiniClass = ({
   startOn,
@@ -13,9 +13,11 @@ const MiniClass = ({
   professorPhone,
   price,
 }: MiniClasses) => {
+  const { locale } = usePaths();
+
   const starting = new Date(startOn);
   const ending = new Date(endsOn);
-  const formattedDate = formatDate(starting);
+  const formattedDate = formatDate(starting, locale);
   const status = classStatus(starting, ending);
   return (
     <li className="border-t flex justify-between items-start py-3 px-2 w-full">

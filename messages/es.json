@@ -88,7 +88,22 @@
       "title": "Reservar Clase",
       "description": "Página para reservar clase de SpanIA"
     },
-    "title": "Reservar Clase"
+    "title": "Reserva Tus Clases",
+    "nextBtn": "Siguiente",
+    "altImage": "Foto de perfil",
+    "availableLabel": "Disponible",
+    "notAvailableLabel": "No Disponible",
+    "reservedLabel": "Reservado",
+    "clean": "Limpiar",
+    "popup": {
+      "title": "Detalles de clase",
+      "date": "Fecha:",
+      "hour": "Hora:",
+      "phone": "Teléfono de Javier:",
+      "location": "Ubicación:",
+      "price": "Precio:",
+      "btn": "Confirmar clase"
+    }
   },
   "loginPage": {
     "metadata": {

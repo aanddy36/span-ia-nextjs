@@ -1,5 +1,5 @@
 import { authenticateUser } from "@/utils/authenticateUser";
-import { getDurationPie } from "@/utils/getDurationPie";
+import { getDurationPie } from "@/app/queries/getDurationPie";
 
 export async function GET(req: Request) {
   try {

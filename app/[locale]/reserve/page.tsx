@@ -1,3 +1,5 @@
+import ReserveClass from "@/app/_components/organisms/reserve-class";
+import { ReserveClassProvider } from "@/contexts/ReserveClass";
 import { Messages } from "@/types/modals";
 import { getMessages } from "next-intl/server";
 
@@ -14,9 +16,12 @@ export async function generateMetadata({
   return { title, description };
 }
 
-const page = async ({ params: { locale } }: { params: { locale: string } }) => {
-  const { reservePage } = (await getMessages({ locale })) as Messages;
-  return <div>{reservePage.title}</div>;
+const page = async () => {
+  return (
+    <ReserveClassProvider>
+      <ReserveClass />
+    </ReserveClassProvider>
+  );
 };
 
 export default page;

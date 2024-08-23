@@ -1,5 +1,5 @@
 import { authenticateUser } from "@/utils/authenticateUser";
-import { getUserMiniClassesById } from "@/utils/getUserClasses";
+import { getUserMiniClassesById } from "@/app/queries/getUserClasses";
 
 export async function GET(
   req: Request,

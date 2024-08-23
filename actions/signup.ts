@@ -5,7 +5,7 @@ import db from "@/lib/db";
 import { SignupSchema, SignupSchemaType } from "@/schemas/signup";
 import { Messages } from "@/types/modals";
 
-import { getUserByEmail } from "@/utils/getUserBy";
+import { getUserByEmail } from "@/app/queries/getUserBy";
 import bcrypt from "bcryptjs";
 import { getMessages } from "next-intl/server";
 import { revalidatePath } from "next/cache";

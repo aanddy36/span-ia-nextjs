@@ -1,7 +1,7 @@
 import { UserSettingsSchema } from "@/schemas/userSettings";
 import { authenticateUser } from "@/utils/authenticateUser";
-import { getUserInfo } from "@/utils/getUserInfo";
-import { updateUserById } from "@/utils/updateUserById";
+import { getUserInfo } from "@/app/queries/getUserInfo";
+import { updateUserById } from "@/app/queries/updateUserById";
 import { NextRequest } from "next/server";
 
 export async function GET(

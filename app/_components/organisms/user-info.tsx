@@ -5,7 +5,7 @@ import { getMessages } from "next-intl/server";
 import Image from "next/image";
 import { FC } from "react";
 import UserSettingsBtn from "../atoms/UserSettingsBtn";
-import { getUserInfo } from "@/utils/getUserInfo";
+import { getUserInfo } from "@/app/queries/getUserInfo";
 import { fetchRequest } from "@/utils/fetchRequest";
 
 interface UserInfoProps {

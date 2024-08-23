@@ -1,5 +1,5 @@
 import { SortBySlug, StatusSlug } from "@/types/modals";
-import { getAdminClasses } from "@/utils/getAdminClasses";
+import { getAdminClasses } from "@/app/queries/getAdminClasses";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {

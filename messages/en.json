@@ -88,7 +88,22 @@
       "title": "Reserve Class",
       "description": "Reserve Class page of SpanIA"
     },
-    "title": "Reserve Class"
+    "title": "Schedule Your Classes",
+    "nextBtn": "Next",
+    "altImage": "Profile picture",
+    "availableLabel": "Available",
+    "notAvailableLabel": "Not Available",
+    "reservedLabel": "Reserved",
+    "clean": "Clean",
+    "popup": {
+      "title": "Class details",
+      "date": "Date:",
+      "hour": "Hour:",
+      "phone": "Javier's Phone:",
+      "location": "Location:",
+      "price": "Price:",
+      "btn": "Confirm class"
+    }
   },
   "loginPage": {
     "metadata": {
@@ -190,9 +205,9 @@
       "sales": "sales",
       "students": "Students",
       "hours": "hours",
-      "timeSeriesLabel":"Sales time serie",
-      "durationPieLabel":"Duration summary",
-      "errorFetchingStats":"Something went wrong. Try again later."
+      "timeSeriesLabel": "Sales time serie",
+      "durationPieLabel": "Duration summary",
+      "errorFetchingStats": "Something went wrong. Try again later."
     },
     "classesPage": {
       "title": "Classes",

@@ -3,16 +3,19 @@ import { classStatus } from "@/utils/classStatus";
 import { formatDate } from "@/utils/formatDate";
 import { formatPrice } from "@/utils/formatPrice";
 import { stringedHour } from "@/utils/stringedHour";
-import React from "react";
+import React, { FC } from "react";
 import { StatusSpan } from "@/app/_components/atoms/StatusSpan";
 
-const TableRow = ({
+type AdminClassesProps = AdminClasses & { locale: string };
+
+const TableRow: FC<AdminClassesProps> = ({
   id,
   student: { name, email },
   startOn,
   endsOn,
   price,
-}: AdminClasses) => {
+  locale,
+}) => {
   const starting = new Date(startOn);
   const ending = new Date(endsOn);
   const status = classStatus(starting, ending);
@@ -29,7 +32,7 @@ const TableRow = ({
       <td className="flex flex-col items-start gap-[7px]">
         {`${stringedHour(starting)} - ${stringedHour(ending)}`}
         <span className=" text-xs font-normal opacity-80">
-          {formatDate(starting)}
+          {formatDate(starting, locale)}
         </span>
       </td>
       <td>

@@ -1,5 +1,5 @@
 import { authenticateUser } from "@/utils/authenticateUser";
-import { getAllStudents } from "@/utils/getAllStudents";
+import { getAllStudents } from "@/app/queries/getAllStudents";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {

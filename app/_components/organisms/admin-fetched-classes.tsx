@@ -50,7 +50,7 @@ const AdminFetchedClasses: FC<AdminClassesListProps> = async ({
           </tr>
         ) : (
           classes.map((cl) => {
-            return <TableRow key={cl.id} {...cl} />;
+            return <TableRow key={cl.id} {...cl} locale={locale}/>;
           })
         )}
       </tbody>

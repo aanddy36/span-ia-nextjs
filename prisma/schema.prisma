@@ -73,3 +73,14 @@ model SingleClass {
   student       User          @relation(fields: [studentId], references: [id])
   configuration Configuration @relation(fields: [configurationId], references: [id])
 }
+
+model AvailableHours {
+  id           String @id @default(cuid())
+  dayInTheWeek Int
+  time         String
+}
+
+model ReservedHours {
+  id   String   @id @default(cuid())
+  hour DateTime
+}

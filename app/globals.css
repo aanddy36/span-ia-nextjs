@@ -67,3 +67,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+.border-red-scroll::-webkit-scrollbar {
+  width: 0; /* This will hide the scrollbar on WebKit browsers like Chrome and Safari */
+  height: 0;
+}

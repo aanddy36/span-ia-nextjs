@@ -1,4 +1,4 @@
-import { getSummaryClasses } from "@/utils/getSummaryClasses";
+import { getSummaryClasses } from "@/app/queries/getSummaryClasses";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {

@@ -1,5 +1,5 @@
 import { authenticateUser } from "@/utils/authenticateUser";
-import { getTimeSeries } from "@/utils/getTimeSeries";
+import { getTimeSeries } from "@/app/queries/getTimeSeries";
 
 export async function GET(req: Request) {
   try {

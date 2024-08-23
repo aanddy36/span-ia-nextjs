@@ -24,11 +24,7 @@ const UserClassesList = () => {
         const res = await fetch(`/api/user/classes/${user?.id}`);
         const ans = await res.json();
 
-        if (ans.error) {
-          setError(true);
-        } else {
-          setClasses(ans.success);
-        }
+        setClasses(ans.success);
       } catch (error) {
         console.log(error);
         setError(true);
