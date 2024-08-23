@@ -1,19 +1,22 @@
 import { formatPrice } from "@/utils/formatPrice";
 import React from "react";
 import { FaXmark } from "react-icons/fa6";
-import { Button } from "../shadcn/button";
+import { Button } from "@/app/_components/shadcn/button";
 import { useReserveClass } from "@/contexts/ReserveClass";
 import { useTranslations } from "next-intl";
 import { useConfiguration } from "@/contexts/Configuration";
 import { stringedHour } from "@/utils/stringedHour";
 import usePaths from "@/hooks/usePaths";
 import { longDate } from "@/utils/longDate";
+import { useUser } from "@/contexts/UserContext";
+import AuthPopup from "@/app/_components/organisms/auth-popup";
 
 const ConfirmClassPopup = () => {
   const t = useTranslations("reservePage.popup");
   const { locale } = usePaths();
   const { phone, address } = useConfiguration();
   const { setIsOpenConfirm, price, selectedSlots } = useReserveClass();
+  const { user, setIsOpenAuthModal, isOpenAuthModal } = useUser();
 
   let startDate = selectedSlots && new Date(selectedSlots[0].time);
   let endingDate =
@@ -23,6 +26,15 @@ const ConfirmClassPopup = () => {
   const formattedDate = longDate(startDate as Date, locale);
   let startingHour = stringedHour(startDate as Date);
   let endingHour = stringedHour(endingDate as Date);
+
+  const handleClick = () => {
+    if (!user) {
+      setIsOpenAuthModal(true);
+      return;
+    }
+    setIsOpenConfirm(false);
+  };
+
   return (
     <div className=" fixed inset-0 bg-black/50 z-[10]">
       <div
@@ -54,8 +66,11 @@ const ConfirmClassPopup = () => {
             {formatPrice(price)}
           </li>
         </ul>
-        <Button variant="red">{t("btn")}</Button>
+        <Button onClick={handleClick} variant="red">
+          {t("btn")}
+        </Button>
       </div>
+      {isOpenAuthModal && <AuthPopup />}
     </div>
   );
 };

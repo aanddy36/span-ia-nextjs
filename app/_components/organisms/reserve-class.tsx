@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useUser } from "@/contexts/UserContext";
 import { useReserveClass } from "@/contexts/ReserveClass";
 import ReserveFooter from "./reserve-footer";
 
@@ -10,7 +9,6 @@ import ConfirmClassPopup from "./confirm-classs-popup";
 
 const ReserveClass = () => {
   const t = useTranslations("reservePage");
-  const { user } = useUser();
   const {isOpenConfirm} = useReserveClass()
 
   return (

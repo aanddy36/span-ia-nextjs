@@ -103,6 +103,22 @@
       "location": "Location:",
       "price": "Price:",
       "btn": "Confirm class"
+    },
+    "login": {
+      "subText": "Please login first so you can schedule a class!",
+      "or": "or",
+      "email": "Email",
+      "password": "Password",
+      "login": "Log In",
+      "noAccount": "Don’t have an account yet?",
+      "signUp": "Sign up"
+    },
+    "signup": {
+      "subText": "Please create an account first so you can schedule your first class!",
+      "google": "Continue with Google",
+      "github": "Continue with GitHub",
+      "account": "Already have an account?",
+      "logIn": "Log in"
     }
   },
   "loginPage": {

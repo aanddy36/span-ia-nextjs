@@ -103,6 +103,22 @@
       "location": "Ubicación:",
       "price": "Precio:",
       "btn": "Confirmar clase"
+    },
+    "login": {
+      "subText": "¡Por favor, inicia sesión primero para que puedas programar una clase!",
+      "or": "o",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "login": "Iniciar sesión",
+      "noAccount": "¿No tienes una cuenta todavía?",
+      "signUp": "Regístrate"
+    },
+    "signup": {
+      "subText": "¡Por favor, crea una cuenta primero para que puedas programar tu primera clase!",
+      "google": "Continuar con Google",
+      "github": "Continuar con GitHub",
+      "account": "¿Ya tienes una cuenta?",
+      "logIn": "Inicia sesión"
     }
   },
   "loginPage": {
